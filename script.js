@@ -1,8 +1,8 @@
 // List of images and descriptions
 const images = [
-    { src: "https://raw.githubusercontent.com/your-username/your-repo-name/main/images/image1.jpg", description: "Description for image 1" },
-    { src: "https://raw.githubusercontent.com/your-username/your-repo-name/main/images/image2.jpg", description: "Description for image 2" },
-    { src: "https://raw.githubusercontent.com/your-username/your-repo-name/main/images/image3.jpg", description: "Description for image 3" },
+    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image1.jpg", description: "Description for image 1" },
+    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image2.jpg", description: "Description for image 2" },
+    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image3.jpg", description: "Description for image 3" },
     // Add more images here
 ];
 
