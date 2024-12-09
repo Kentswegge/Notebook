@@ -6,7 +6,6 @@ const images = [
     // Add more images here
 ];
 
-// Function to display a random image
 function showRandomImage() {
     const randomIndex = Math.floor(Math.random() * images.length);
     const image = images[randomIndex];
@@ -16,6 +15,7 @@ function showRandomImage() {
     document.getElementById("random-image").alt = image.description;
     document.getElementById("image-description").textContent = image.description;
 }
+
 
 // Event listener for the button
 document.getElementById("next-button").addEventListener("click", showRandomImage);
