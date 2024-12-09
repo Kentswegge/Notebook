@@ -1,24 +1,27 @@
-// List of images and descriptions
-const images = [
-    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/Amangiri-Resort_5.jpg", description: "Description for image 1" },
-    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/Comet Hale-Bopp, April 1, 1997-Sebastian Voltmer-2.jpg", description: "Description for image 2" },
-    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/DLEW.jpg", description: "Description for image 3" },
-    // Add more images here
-];
+let images = [];
+
+// Fetch the JSON file
+fetch("images.json")
+  .then(response => response.json())
+  .then(data => {
+    images = data;
+    showRandomImage(); // Show an initial random image once the data is loaded
+  })
+  .catch(error => console.error("Error loading images:", error));
 
 function showRandomImage() {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const image = images[randomIndex];
+  if (images.length === 0) return; // Wait until images are loaded
 
-    // Update image and description
-    document.getElementById("random-image").src = image.src;
-    document.getElementById("random-image").alt = image.description;
-    document.getElementById("image-description").textContent = image.description;
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const image = images[randomIndex];
+
+  const imageElement = document.getElementById("random-image");
+  const descriptionElement = document.getElementById("image-description");
+
+  imageElement.src = image.src;
+  imageElement.alt = image.description;
+  descriptionElement.textContent = image.description;
 }
 
-
-// Event listener for the button
-document.getElementById("next-button").addEventListener("click", showRandomImage);
-
-// Show a random image when the page loads
-showRandomImage();
+// Attach event listener to the button
+document.getElementById("random-button").addEventListener("click", showRandomImage);
