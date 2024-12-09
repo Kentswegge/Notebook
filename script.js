@@ -1,8 +1,8 @@
 // List of images and descriptions
 const images = [
-    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image1.jpg", description: "Description for image 1" },
-    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image2.jpg", description: "Description for image 2" },
-    { src: "https://raw.githubusercontent.com/kentswegge/Notebook/main/images/image3.jpg", description: "Description for image 3" },
+    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/Amangiri-Resort_5.jpg", description: "Description for image 1" },
+    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/Comet Hale-Bopp, April 1, 1997-Sebastian Voltmer-2.jpg", description: "Description for image 2" },
+    { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/DLEW.jpg", description: "Description for image 3" },
     // Add more images here
 ];
 
