@@ -8,6 +8,7 @@ fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/ima
   .catch(error => console.error("Error fetching images:", error));
 
 
+
 function showRandomImage() {
   if (images.length === 0) {
     console.log("No images loaded.");
