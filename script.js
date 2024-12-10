@@ -26,4 +26,4 @@ function showRandomImage() {
 
 
 // Attach event listener to the button
-document.getElementById("random-button").addEventListener("click", showRandomImage);
+document.getElementById("next-button").addEventListener("click", showRandomImage);
