@@ -10,18 +10,24 @@ fetch("images.json")
   .catch(error => console.error("Error loading images:", error));
 
 function showRandomImage() {
-  if (images.length === 0) return; // Ensure images are loaded before proceeding
+  console.log("Button clicked!"); // Debug line
+  if (images.length === 0) {
+    console.log("Images not loaded yet.");
+    return;
+  }
 
   const randomIndex = Math.floor(Math.random() * images.length);
   const image = images[randomIndex];
+  console.log("Selected image:", image); // Debug line
 
   const imageElement = document.getElementById("random-image");
   const descriptionElement = document.getElementById("image-description");
 
-  imageElement.src = image.src; // Update the image source
-  imageElement.alt = image.description; // Update the alt text
-  descriptionElement.textContent = image.description; // Update the description text
+  imageElement.src = image.src;
+  imageElement.alt = image.description;
+  descriptionElement.textContent = image.description;
 }
+
 
 
 
