@@ -1,13 +1,13 @@
 let images = [];
 
-// Fetch the JSON file
 fetch("images.json")
   .then(response => response.json())
   .then(data => {
     images = data;
-    showRandomImage(); // Show an initial random image once the data is loaded
+    console.log("Images loaded:", images); // Debug line
   })
-  .catch(error => console.error("Error loading images:", error));
+  .catch(error => console.error("Error loading images.json:", error));
+
 
 function showRandomImage() {
   console.log("Button clicked!"); // Debug line
