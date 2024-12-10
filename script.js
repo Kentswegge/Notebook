@@ -9,13 +9,21 @@ fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/ima
 
 
 
+let currentIndex = -1; // Track the current image index
+
 function showRandomImage() {
   if (images.length === 0) {
     console.log("No images loaded.");
     return;
   }
 
-  const randomIndex = Math.floor(Math.random() * images.length);
+  let randomIndex;
+  
+  // Ensure the random index is different from the current one
+  do {
+    randomIndex = Math.floor(Math.random() * images.length);
+  } while (randomIndex === currentIndex);
+
   console.log("Random index:", randomIndex, "Image:", images[randomIndex]);
 
   const image = images[randomIndex];
@@ -26,8 +34,11 @@ function showRandomImage() {
   imageElement.src = image.src;
   imageElement.alt = image.description;
   descriptionElement.textContent = image.description;
+
+  // Update the current index for the next round
+  currentIndex = randomIndex;
 }
 
-
-
+// Event listener for the button
 document.getElementById("next-button").addEventListener("click", showRandomImage);
+
