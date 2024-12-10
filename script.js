@@ -9,7 +9,7 @@ fetch("images.json")
   .catch(error => console.error("Error loading images.json:", error));
 
 function showRandomImage() {
-  if (images.length === 0) return;
+  if (images.length === 0) return; // Ensure the array is loaded
 
   const randomIndex = Math.floor(Math.random() * images.length);
   const image = images[randomIndex];
@@ -17,9 +17,10 @@ function showRandomImage() {
   const imageElement = document.getElementById("random-image");
   const descriptionElement = document.getElementById("image-description");
 
-  imageElement.src = image.src;
-  imageElement.alt = image.description;
-  descriptionElement.textContent = image.description;
+  imageElement.src = image.src; // Update the image source
+  imageElement.alt = image.description; // Update the alt text
+  descriptionElement.textContent = image.description; // Update the description
 }
+
 
 document.getElementById("next-button").addEventListener("click", showRandomImage);
