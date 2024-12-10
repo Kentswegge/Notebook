@@ -1,12 +1,12 @@
-let images = [];
-
-fetch("images.json")
+fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     images = data;
     console.log("Images loaded:", images);
+    showRandomImage(); // Show a random image initially
   })
-  .catch(error => console.error("Error loading images.json:", error));
+  .catch(error => console.error("Error fetching images:", error));
+
 
 function showRandomImage() {
   if (images.length === 0) {
