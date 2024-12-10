@@ -20,8 +20,9 @@ function showRandomImage() {
 
   imageElement.src = image.src;
   imageElement.alt = image.description;
-  descriptionElement.textContent = image.description;
+  descriptionElement.textContent = image.description; // Update text from JSON
 }
+
 
 // Attach event listener to the button
 document.getElementById("random-button").addEventListener("click", showRandomImage);
