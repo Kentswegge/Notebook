@@ -24,7 +24,8 @@ function showRandomImage() {
     randomIndex = Math.floor(Math.random() * images.length);
   } while (randomIndex === currentIndex);
 
-  console.log("Random index:", randomIndex, "Image:", images[randomIndex]);
+  console.log("Current index:", currentIndex);  // Log the current image index
+  console.log("Random index chosen:", randomIndex);  // Log the new random image index
 
   const image = images[randomIndex];
 
@@ -41,4 +42,3 @@ function showRandomImage() {
 
 // Event listener for the button
 document.getElementById("next-button").addEventListener("click", showRandomImage);
-
