@@ -17,28 +17,15 @@ function showRandomImage() {
     return;
   }
 
-  let randomIndex;
-  
-  // Ensure the random index is different from the current one
-  do {
-    randomIndex = Math.floor(Math.random() * images.length);
-  } while (randomIndex === currentIndex);
-
-  console.log("Current index:", currentIndex);  // Log the current image index
-  console.log("Random index chosen:", randomIndex);  // Log the new random image index
+  const randomIndex = Math.floor(Math.random() * images.length);
+  console.log("Random index:", randomIndex, "Image:", images[randomIndex]);
 
   const image = images[randomIndex];
 
   const imageElement = document.getElementById("random-image");
   const descriptionElement = document.getElementById("image-description");
 
-  imageElement.src = image.src;
+  imageElement.src = image.src; // Correctly update the image source
   imageElement.alt = image.description;
-  descriptionElement.textContent = image.description;
-
-  // Update the current index for the next round
-  currentIndex = randomIndex;
+  descriptionElement.textContent = image.description; // Update description
 }
-
-// Event listener for the button
-document.getElementById("next-button").addEventListener("click", showRandomImage);
