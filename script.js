@@ -37,6 +37,9 @@ function showRandomImage() {
     console.log("No images loaded or `images` is undefined.");
     return;
   }
+  ...
+}
+
 
   let randomIndex;
   
