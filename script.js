@@ -1,10 +1,6 @@
 fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
   .then(response => response.json())
-  .then(data => {
-    images = data;
-    console.log("Images loaded:", images);
-    showRandomImage(); // Show a random image initially
-  })
+  .then(data => console.log("Fetched images JSON:", data))
   .catch(error => console.error("Error fetching images:", error));
 
 
