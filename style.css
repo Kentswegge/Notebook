@@ -13,20 +13,18 @@ body {
 
 /* Container for the bounding box */
 #image-container {
-  position: fixed;  /* Keep it in a fixed position */
-  top: 50%;         /* Center vertically */
-  left: 50%;        /* Center horizontally */
-  transform: translate(-50%, -50%);  /* Center the box perfectly */
-  width: 400px;     /* Adjusted width of the box */
-  height: 550px;    /* Adjusted height of the box */
-  border: 3px solid white !important; /* Force white border */
-  display: flex;    /* Flexbox for centering image */
+  position: relative; /* Establish this as the parent for the absolute description */
+  width: 400px;       /* Adjusted width of the box */
+  height: 550px;      /* Adjusted height of the box */
+  border: 5px solid white;
+  display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent image overflow */
-  padding: 20px;    /* Padding inside the box (proximity for images) */
-  box-sizing: border-box; /* Include padding and border in the size */
+  overflow: hidden; /* Prevent overflow */
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 
 /* Style for the image inside the box */
 #random-image {
@@ -38,16 +36,16 @@ body {
 
 /* Position for the description outside the box */
 #image-description {
-  position: absolute;    /* Position relative to the nearest positioned ancestor */
-  left: 100%;            /* Start from the right edge of the container */
+  position: absolute;    /* Positioned relative to the image container */
+  right: -20px;          /* Place 20px outside the right edge of the container */
   top: 50%;              /* Center vertically with respect to the container */
-  transform: translateY(-50%); /* Adjust vertical alignment */
-  margin-left: 20px;     /* Add 20px distance from the container */
+  transform: translateY(-50%); /* Correct vertical alignment */
   color: white;          /* Text color */
   font-size: 16px;       /* Text size */
   white-space: nowrap;   /* Prevent wrapping */
   z-index: 1;            /* Keep the text above other elements */
 }
+
 
 
 /* Button styling */
