@@ -17,9 +17,7 @@ body {
 
 .image-container img {
   display: block; /* Ensure it's displayed */
-  width: auto; /* Let it size naturally */
-  max-width: 100%; /* Prevent overflow */
-  height: auto; /* Maintain aspect ratio */
+  /* Temporarily remove size constraints for testing */
 }
 
 .text-container {
