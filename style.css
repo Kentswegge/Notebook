@@ -16,18 +16,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;  /* Limit the width to 80% of the viewport */
-  height: 50vh; /* Limit the height to 70% of the viewport */
+  width: 80vw;  /* Limit the width to 80% of the viewport */
+  height: 70vh; /* Limit the height to 70% of the viewport */
   overflow: hidden; /* Hide overflow */
   max-width: 100%;
   max-height: 100%;
   position: relative;
+  border: 5px solid white;  /* Draw a white border around the bounding box */
+  box-sizing: border-box; /* Include the border in the element's total size */
+  margin: 10px; /* Optional: Add margin around the container */
 }
 
 /* Image rules to ensure proper resizing within the container */
 img {
-  max-width: 50%; /* Maximum width 100% of the container */
-  max-height: 50%; /* Maximum height 100% of the container */
+  max-width: 100%; /* Maximum width 100% of the container */
+  max-height: 100%; /* Maximum height 100% of the container */
   min-width: 300px; /* Minimum width (adjust this to your preference) */
   min-height: 200px; /* Minimum height (adjust this to your preference) */
   object-fit: contain; /* Maintain aspect ratio */
