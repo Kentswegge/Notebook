@@ -77,6 +77,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Ensure images don't overflow the box */
+  margin-right: 120px; /* Add margin to make space for text */
 }
 
 /* Style for the image inside the box */
@@ -88,28 +89,30 @@ button:hover {
 
 /* Position for the description outside the box */
 #image-description {
-  position: absolute;  /* Make the description absolutely positioned */
-  right: -20px;        /* Place the description just outside the box */
-  top: 50%;            /* Center it vertically relative to the box */
+  position: fixed;  /* Keep the description fixed outside the box */
+  right: 20px;      /* Place the description just outside the box */
+  top: 50%;         /* Center it vertically relative to the box */
   transform: translateY(-50%);  /* Adjust vertical position */
   color: white;
   font-size: 16px;
-  width: auto;         /* Allow the text width to expand as needed */
   padding-left: 20px;  /* Optional padding between the box and description */
+  width: auto;         /* Allow the text width to expand as needed */
+  z-index: 1;        /* Make sure the text is on top */
 }
 
 /* Style for the next button */
 #next-button {
-  position: absolute;
-  bottom: 10px;
+  position: fixed;     /* Fixed position to always be below the image */
+  bottom: 20px;        /* Place button below the box */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%);  /* Center the button horizontally */
   padding: 10px 20px;
   background-color: #333;
   color: white;
   border: none;
   font-size: 16px;
   cursor: pointer;
+  z-index: 2;          /* Make sure the button is on top of everything */
 }
 
 #next-button:hover {
