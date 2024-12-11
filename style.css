@@ -38,15 +38,17 @@ body {
 
 /* Position for the description outside the box */
 #image-description {
-  position: fixed;  /* Fixed position outside the box */
-  right: 20px;      /* Space from the right edge of the viewport */
-  top: 50%;         /* Center vertically with respect to the image container */
-  transform: translateY(-50%);  /* Adjust vertical positioning */
-  color: white;
-  font-size: 16px;
-  padding-left: 20px;  /* Padding between box and text */
-  z-index: 1;        /* Ensure text stays above the image */
+  position: absolute;    /* Position relative to the nearest positioned ancestor */
+  left: 100%;            /* Start from the right edge of the container */
+  top: 50%;              /* Center vertically with respect to the container */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+  margin-left: 20px;     /* Add 20px distance from the container */
+  color: white;          /* Text color */
+  font-size: 16px;       /* Text size */
+  white-space: nowrap;   /* Prevent wrapping */
+  z-index: 1;            /* Keep the text above other elements */
 }
+
 
 /* Button styling */
 #next-button {
