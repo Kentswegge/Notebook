@@ -1,3 +1,24 @@
+console.log("Fetching images JSON...");
+fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
+  .then(response => response.json())
+  .then(data => {
+    images = data;
+    console.log("Images loaded:", images);
+    showRandomImage(); // Show a random image initially
+  })
+  .catch(error => console.error("Error fetching images:", error));
+
+
+fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
+  .then(response => response.json())
+  .then(data => {
+    images = data;
+    console.log("Images loaded:", images);
+    showRandomImage(); // Show a random image initially
+  })
+  .catch(error => console.error("Error fetching images:", error));
+
+console.log("Fetching images JSON...");
 fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
