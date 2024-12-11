@@ -18,8 +18,8 @@ body {
   left: 50%;        /* Center horizontally */
   transform: translate(-50%, -50%);  /* Center the box perfectly */
   width: 400px;     /* Adjusted width of the box */
-  height: 650px;    /* Adjusted height of the box */
-  border: 5px solid white !important; /* Force white border */
+  height: 550px;    /* Adjusted height of the box */
+  border: 3px solid white !important; /* Force white border */
   display: flex;    /* Flexbox for centering image */
   align-items: center;
   justify-content: center;
