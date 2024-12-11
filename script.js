@@ -1,24 +1,3 @@
-console.log("Fetching images JSON...");
-fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
-  .then(response => response.json())
-  .then(data => {
-    images = data;
-    console.log("Images loaded:", images);
-    showRandomImage(); // Show a random image initially
-  })
-  .catch(error => console.error("Error fetching images:", error));
-
-
-fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
-  .then(response => response.json())
-  .then(data => {
-    images = data;
-    console.log("Images loaded:", images);
-    showRandomImage(); // Show a random image initially
-  })
-  .catch(error => console.error("Error fetching images:", error));
-
-console.log("Fetching images JSON...");
 fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
@@ -33,13 +12,10 @@ fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/ima
 let currentIndex = -1; // Track the current image index
 
 function showRandomImage() {
-  if (!images || images.length === 0) {
-    console.log("No images loaded or `images` is undefined.");
+  if (images.length === 0) {
+    console.log("No images loaded.");
     return;
   }
-  ...
-}
-
 
   let randomIndex;
   
