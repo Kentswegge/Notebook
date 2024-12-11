@@ -12,83 +12,31 @@ body {
 }
 
 /* Image container to center images and give them boundaries */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;  /* Limit the width to 80% of the viewport */
-  height: 70vh; /* Limit the height to 70% of the viewport */
-  overflow: hidden; /* Hide overflow */
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
-  border: 5px solid white;  /* Draw a white border around the bounding box */
-  box-sizing: border-box; /* Include the border in the element's total size */
-  margin: 10px; /* Optional: Add margin around the container */
-}
-
-/* Image rules to ensure proper resizing within the container */
-img {
-  max-width: 100%; /* Maximum width 100% of the container */
-  max-height: 100%; /* Maximum height 100% of the container */
-  min-width: 300px; /* Minimum width (adjust this to your preference) */
-  min-height: 200px; /* Minimum height (adjust this to your preference) */
-  object-fit: contain; /* Maintain aspect ratio */
-  display: block;
-  margin: 0 auto;
-  transition: all 0.3s ease; /* Optional: smooth transition when changing sizes */
-}
-
-/* Description styling */
-#image-description {
-  margin-top: 10px;
-  font-size: 1.2em;
-  max-width: 90%;
-  word-wrap: break-word;
-}
-
-/* Button styling */
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-/* Your existing CSS */
-
-/* Container for the bounding box */
 #image-container {
   position: fixed;  /* Keep it in a fixed position */
   top: 50%;         /* Center vertically */
   left: 50%;        /* Center horizontally */
   transform: translate(-50%, -50%);  /* Center the box perfectly */
-  width: 400px;     /* Adjusted width of the box */
-  height: 250px;    /* Adjusted height of the box */
-  border: 2px solid white;
-  display: flex;    /* Flexbox for centering image */
+  width: 400px;     /* Set fixed width */
+  height: 250px;    /* Set fixed height */
+  border: 2px solid white;  /* Draw a white border around the bounding box */
+  display: flex;    /* Flexbox for centering the image inside */
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Prevent image overflow */
   padding: 20px;    /* Padding inside the box (the proximity you want for images) */
+  box-sizing: border-box; /* Ensure padding is inside the box size */
 }
 
 /* Style for the image inside the box */
 #random-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100%;   /* Limit the image to the container's width */
+  max-height: 100%;  /* Limit the image to the container's height */
   object-fit: contain;  /* Retain image aspect ratio */
-  padding: 0; /* No extra padding inside the image */
+  display: block;
 }
 
-/* Position for the description outside the box */
+/* Description styling */
 #image-description {
   position: fixed;  /* Fixed position outside the box */
   right: 20px;      /* Space from the right edge of the viewport */
@@ -98,6 +46,8 @@ button:hover {
   font-size: 16px;
   padding-left: 20px;  /* Padding between box and text */
   z-index: 1;        /* Ensure text stays above the image */
+  max-width: 300px;   /* Optional: Limit description width */
+  word-wrap: break-word; /* Break long words in description */
 }
 
 /* Style for the next button */
