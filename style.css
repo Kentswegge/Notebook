@@ -27,6 +27,7 @@ body {
   padding: 20px;    /* Padding inside the box (proximity for images) */
   box-sizing: border-box; /* Ensure the padding and border are included in the size */
   z-index: 1; /* Ensure it stays on top of background elements */
+  background-color: transparent; /* Ensure the box has a transparent background */
 }
 
 /* Image rules to ensure proper resizing within the container */
