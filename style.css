@@ -58,13 +58,18 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #555;
+}
+
 /* Your existing CSS here */
 
 /* New styles for the image bounding box */
 .image-container {
   position: fixed;
-  top: 20px; /* Distance from the top of the screen */
-  left: 20px; /* Distance from the left of the screen */
+  top: 50%; /* Move to the vertical center of the viewport */
+  left: 50%; /* Move to the horizontal center of the viewport */
+  transform: translate(-50%, -50%); /* Adjust to truly center it by shifting the element */
   width: 500px; /* Fixed width of the bounding box */
   height: 500px; /* Fixed height of the bounding box */
   border: 2px solid #fff; /* Optional: To visually see the bounding box */
@@ -81,7 +86,3 @@ button {
   object-fit: contain; /* Maintain aspect ratio without distortion */
 }
 
-
-button:hover {
-  background-color: #555;
-}
