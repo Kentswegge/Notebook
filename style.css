@@ -62,27 +62,42 @@ button:hover {
   background-color: #555;
 }
 
-/* Your existing CSS here */
+/* Your existing CSS */
 
 /* New styles for the image bounding box */
 .image-container {
   position: fixed;
-  top: 50%; /* Move to the vertical center of the viewport */
-  left: 50%; /* Move to the horizontal center of the viewport */
-  transform: translate(-50%, -50%); /* Adjust to truly center it by shifting the element */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Truly center the box */
   width: 500px; /* Fixed width of the bounding box */
   height: 500px; /* Fixed height of the bounding box */
-  border: 2px solid #fff; /* Optional: To visually see the bounding box */
-  padding: 20px; /* Add padding inside the box to create space around the image */
+  border: 2px solid #fff; /* Optional border for visual clarity */
+  padding: 20px; /* Space around the image */
   display: flex;
   justify-content: center; /* Center the image horizontally */
   align-items: center; /* Center the image vertically */
-  overflow: hidden; /* Ensure the image doesn't overflow the box */
+  overflow: hidden; /* Prevent overflow */
 }
 
+/* Ensure the image scales correctly inside the box */
 .image-container img {
-  width: 100%; /* Image scales to fit the box width */
-  height: 100%; /* Image scales to fit the box height */
-  object-fit: contain; /* Maintain aspect ratio without distortion */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keep aspect ratio intact */
 }
 
+/* New styles for the description */
+#image-description {
+  position: fixed; /* Fix description in the viewport */
+  bottom: 20px; /* Set distance from the bottom of the viewport */
+  left: 50%; /* Align horizontally */
+  transform: translateX(-50%); /* Center the description horizontally */
+  color: white; /* White text for contrast */
+  font-size: 18px; /* Adjust font size */
+  text-align: center; /* Center the text */
+  max-width: 500px; /* Limit the width of the description */
+  padding: 10px; /* Add some padding around the description */
+  background: rgba(0, 0, 0, 0.5); /* Optional: Background color with transparency for readability */
+  border-radius: 10px; /* Optional: Round corners */
+}
