@@ -36,14 +36,15 @@ body {
 
 /* Position for the description outside the box */
 #image-description {
-  position: absolute;    /* Positioned relative to the image container */
-  right: 100px;          /* Place 20px outside the right edge of the container */
-  top: 50%;              /* Center vertically with respect to the container */
+  position: absolute;          /* Positioned relative to the image container */
+  left: 100px;                 /* Place 20px outside the right edge of the container */
+  margin-left: 20px            /* Add 20px spacing outside the container */
+  top: 50%;                    /* Center vertically with respect to the container */
   transform: translateY(-50%); /* Correct vertical alignment */
-  color: white;          /* Text color */
-  font-size: 16px;       /* Text size */
-  white-space: nowrap;   /* Prevent wrapping */
-  z-index: 1;            /* Keep the text above other elements */
+  color: white;                /* Text color */
+  font-size: 16px;             /* Text size */
+  white-space: nowrap;         /* Prevent wrapping */
+  z-index: 1;                  /* Keep the text above other elements */
 }
 
 
