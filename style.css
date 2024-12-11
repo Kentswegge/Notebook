@@ -58,6 +58,30 @@ button {
   cursor: pointer;
 }
 
+/* Your existing CSS here */
+
+/* New styles for the image bounding box */
+.image-container {
+  position: fixed;
+  top: 20px; /* Distance from the top of the screen */
+  left: 20px; /* Distance from the left of the screen */
+  width: 500px; /* Fixed width of the bounding box */
+  height: 500px; /* Fixed height of the bounding box */
+  border: 2px solid #fff; /* Optional: To visually see the bounding box */
+  padding: 20px; /* Add padding inside the box to create space around the image */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  overflow: hidden; /* Ensure the image doesn't overflow the box */
+}
+
+.image-container img {
+  width: 100%; /* Image scales to fit the box width */
+  height: 100%; /* Image scales to fit the box height */
+  object-fit: contain; /* Maintain aspect ratio without distortion */
+}
+
+
 button:hover {
   background-color: #555;
 }
