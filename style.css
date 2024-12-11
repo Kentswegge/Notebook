@@ -64,40 +64,54 @@ button:hover {
 
 /* Your existing CSS */
 
-/* New styles for the image bounding box */
-.image-container {
-  position: fixed;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Truly center the box */
-  width: 500px; /* Fixed width of the bounding box */
-  height: 500px; /* Fixed height of the bounding box */
-  border: 2px solid #fff; /* Optional border for visual clarity */
-  padding: 20px; /* Space around the image */
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  overflow: hidden; /* Prevent overflow */
+/* Container for the bounding box */
+#image-container {
+  position: fixed;  /* Make it stay in a fixed position on the screen */
+  top: 50%;         /* Center vertically */
+  left: 50%;        /* Center horizontally */
+  transform: translate(-50%, -50%);  /* Perfectly center it */
+  width: 500px;     /* Set a fixed width for the box */
+  height: 300px;    /* Set a fixed height for the box */
+  border: 2px solid white;
+  display: flex;    /* Flexbox to easily manage content */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure images don't overflow the box */
 }
 
-/* Ensure the image scales correctly inside the box */
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Keep aspect ratio intact */
+/* Style for the image inside the box */
+#random-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* Ensure images retain their aspect ratio */
 }
 
-/* New styles for the description */
+/* Position for the description outside the box */
 #image-description {
-  position: fixed; /* Fix description in the viewport */
-  bottom: 20px; /* Set distance from the bottom of the viewport */
-  left: 50%; /* Align horizontally */
-  transform: translateX(-50%); /* Center the description horizontally */
-  color: white; /* White text for contrast */
-  font-size: 18px; /* Adjust font size */
-  text-align: center; /* Center the text */
-  max-width: 500px; /* Limit the width of the description */
-  padding: 10px; /* Add some padding around the description */
-  background: rgba(0, 0, 0, 0.5); /* Optional: Background color with transparency for readability */
-  border-radius: 10px; /* Optional: Round corners */
+  position: absolute;  /* Make the description absolutely positioned */
+  right: -20px;        /* Place the description just outside the box */
+  top: 50%;            /* Center it vertically relative to the box */
+  transform: translateY(-50%);  /* Adjust vertical position */
+  color: white;
+  font-size: 16px;
+  width: auto;         /* Allow the text width to expand as needed */
+  padding-left: 20px;  /* Optional padding between the box and description */
+}
+
+/* Style for the next button */
+#next-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#next-button:hover {
+  background-color: #555;
 }
