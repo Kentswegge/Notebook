@@ -66,44 +66,44 @@ button:hover {
 
 /* Container for the bounding box */
 #image-container {
-  position: fixed;  /* Make it stay in a fixed position on the screen */
+  position: fixed;  /* Keep it in a fixed position */
   top: 50%;         /* Center vertically */
   left: 50%;        /* Center horizontally */
-  transform: translate(-50%, -50%);  /* Perfectly center it */
-  width: 500px;     /* Set a fixed width for the box */
-  height: 300px;    /* Set a fixed height for the box */
+  transform: translate(-50%, -50%);  /* Center the box perfectly */
+  width: 400px;     /* Adjusted width of the box */
+  height: 250px;    /* Adjusted height of the box */
   border: 2px solid white;
-  display: flex;    /* Flexbox to easily manage content */
+  display: flex;    /* Flexbox for centering image */
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensure images don't overflow the box */
-  margin-right: 120px; /* Add margin to make space for text */
+  overflow: hidden; /* Prevent image overflow */
+  padding: 20px;    /* Padding inside the box (the proximity you want for images) */
 }
 
 /* Style for the image inside the box */
 #random-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;  /* Ensure images retain their aspect ratio */
+  object-fit: contain;  /* Retain image aspect ratio */
+  padding: 0; /* No extra padding inside the image */
 }
 
 /* Position for the description outside the box */
 #image-description {
-  position: fixed;  /* Keep the description fixed outside the box */
-  right: 20px;      /* Place the description just outside the box */
-  top: 50%;         /* Center it vertically relative to the box */
-  transform: translateY(-50%);  /* Adjust vertical position */
+  position: fixed;  /* Fixed position outside the box */
+  right: 20px;      /* Space from the right edge of the viewport */
+  top: 50%;         /* Center vertically with respect to the image container */
+  transform: translateY(-50%);  /* Adjust vertical positioning */
   color: white;
   font-size: 16px;
-  padding-left: 20px;  /* Optional padding between the box and description */
-  width: auto;         /* Allow the text width to expand as needed */
-  z-index: 1;        /* Make sure the text is on top */
+  padding-left: 20px;  /* Padding between box and text */
+  z-index: 1;        /* Ensure text stays above the image */
 }
 
 /* Style for the next button */
 #next-button {
-  position: fixed;     /* Fixed position to always be below the image */
-  bottom: 20px;        /* Place button below the box */
+  position: fixed;     /* Keep button fixed at the bottom */
+  bottom: 20px;        /* Position the button below the box */
   left: 50%;
   transform: translateX(-50%);  /* Center the button horizontally */
   padding: 10px 20px;
@@ -112,7 +112,7 @@ button:hover {
   border: none;
   font-size: 16px;
   cursor: pointer;
-  z-index: 2;          /* Make sure the button is on top of everything */
+  z-index: 2;          /* Ensure button is on top of other elements */
 }
 
 #next-button:hover {
