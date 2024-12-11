@@ -13,32 +13,26 @@ let currentIndex = -1;
 
 function showRandomImage() {
   if (images.length === 0) {
-    console.log("No images loaded.");
+    console.error("No images loaded."); // Error if no images
     return;
   }
 
-  let randomIndex;
-  
-  // Ensure the random index is different from the current one
-  do {
-    randomIndex = Math.floor(Math.random() * images.length);
-    console.log("Generated random index:", randomIndex);
-  } while (randomIndex === currentIndex);
-
-  console.log("Previous index:", currentIndex);
-  console.log("Chosen index:", randomIndex);
+  const randomIndex = Math.floor(Math.random() * images.length);
+  console.log("Random index:", randomIndex); // Log the index
+  console.log("Image object:", images[randomIndex]); // Log the image object
 
   const image = images[randomIndex];
 
   const imageElement = document.getElementById("random-image");
   const descriptionElement = document.getElementById("image-description");
 
-  imageElement.src = image.src;
+  if (!imageElement || !descriptionElement) {
+    console.error("Image or description element not found in DOM.");
+    return;
+  }
+
+  imageElement.src = image.src; // Update the image source
   imageElement.alt = image.description;
-  descriptionElement.textContent = image.description;
-
-  // Update the current index for the next round
-  currentIndex = randomIndex;
+  descriptionElement.textContent = image.description; // Update description
+  console.log("Updated image and description:", image.src, image.description);
 }
-
-document.getElementById("next-button").addEventListener("click", showRandomImage);
