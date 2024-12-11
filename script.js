@@ -33,8 +33,8 @@ fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/ima
 let currentIndex = -1; // Track the current image index
 
 function showRandomImage() {
-  if (images.length === 0) {
-    console.log("No images loaded.");
+  if (!images || images.length === 0) {
+    console.log("No images loaded or `images` is undefined.");
     return;
   }
 
