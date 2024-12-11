@@ -39,7 +39,7 @@ body {
   position: absolute;          /* Positioned relative to the image container */
   right: 300px;                /* Place 20px outside the right edge of the container */
   margin-left: 20px            /* Add 20px spacing outside the container */
-  top: -200px;                   /* Center vertically with respect to the container */
+  top: -200px;                 /* Center vertically with respect to the container */
   transform: none;             /* Correct vertical alignment */
   width: 300px;                /* Fixed width for the text box */
   max-width: 300px;            /* Ensure the box does not grow beyond this width */
