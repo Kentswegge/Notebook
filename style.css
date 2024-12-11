@@ -37,7 +37,7 @@ body {
 /* Position for the description outside the box */
 #image-description {
   position: absolute;          /* Positioned relative to the image container */
-  left: 100px;                 /* Place 20px outside the right edge of the container */
+  right: 0px;                 /* Place 20px outside the right edge of the container */
   margin-left: 20px            /* Add 20px spacing outside the container */
   top: 50%;                    /* Center vertically with respect to the container */
   transform: translateY(-50%); /* Correct vertical alignment */
