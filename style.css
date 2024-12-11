@@ -15,7 +15,7 @@ body {
 #image-container {
   position: relative; /* Establish this as the parent for the absolute description */
   width: 400px;       /* Adjusted width of the box */
-  height: 550px;      /* Adjusted height of the box */
+  height: 750px;      /* Adjusted height of the box */
   border: 5px solid white;
   display: flex;
   align-items: center;
