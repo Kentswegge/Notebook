@@ -19,27 +19,24 @@ body {
   transform: translate(-50%, -50%);  /* Center the box perfectly */
   width: 400px;     /* Adjusted width of the box */
   height: 250px;    /* Adjusted height of the box */
-  border: 5px solid white;  /* White border around the bounding box */
+  border: 5px solid white !important; /* Force white border */
   display: flex;    /* Flexbox for centering image */
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Prevent image overflow */
   padding: 20px;    /* Padding inside the box (proximity for images) */
-  box-sizing: border-box; /* Ensure the padding and border are included in the size */
-  z-index: 1; /* Ensure it stays on top of background elements */
-  background-color: transparent; /* Ensure the box has a transparent background */
+  box-sizing: border-box; /* Include padding and border in the size */
 }
 
-/* Image rules to ensure proper resizing within the container */
+/* Style for the image inside the box */
 #random-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;  /* Retain image aspect ratio */
   padding: 0; /* No extra padding inside the image */
-  z-index: 2; /* Ensure the image appears above the bounding box's padding */
 }
 
-/* Description styling */
+/* Position for the description outside the box */
 #image-description {
   position: fixed;  /* Fixed position outside the box */
   right: 20px;      /* Space from the right edge of the viewport */
@@ -48,25 +45,10 @@ body {
   color: white;
   font-size: 16px;
   padding-left: 20px;  /* Padding between box and text */
-  z-index: 2;        /* Ensure text stays above the image */
+  z-index: 1;        /* Ensure text stays above the image */
 }
 
 /* Button styling */
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-/* Button positioning */
 #next-button {
   position: fixed;     /* Keep button fixed at the bottom */
   bottom: 20px;        /* Position the button below the box */
@@ -83,4 +65,14 @@ button:hover {
 
 #next-button:hover {
   background-color: #555;
+}
+
+/* Image rules to ensure proper resizing within the container */
+img {
+  max-width: 100%; /* Maximum width 100% of the container */
+  max-height: 100%; /* Maximum height 100% of the container */
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease; /* Optional: smooth transition when changing sizes */
 }
