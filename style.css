@@ -41,13 +41,17 @@ body {
   margin-left: 20px            /* Add 20px spacing outside the container */
   top: 50%;                    /* Center vertically with respect to the container */
   transform: translateY(-50%); /* Correct vertical alignment */
+  width: 300px;                /* Fixed width for the text box */
+  max-width: 300px;            /* Ensure the box does not grow beyond this width */
+  text-align: left;            /* Align all text to the left */
+  white-space: normal;         /* Allow wrapping for long sentences */
+  line-height: 1.5;            /* Add consistent line spacing */
+  overflow-wrap: break-word;   /* Handle long words gracefully */
+  word-wrap: break-word;       /* Compatibility for older browsers */
+  box-sizing: border-box;      /* Include padding/border in width calculations */
   color: white;                /* Text color */
-  font-size: 16px;             /* Text size */
-  max-width: 300px;            /* Limit the width of the text block */
-  text-align: left;            /* Align the text content to the left */
-  white-space: normal;         /* Allow text to wrap if it exceeds the max-width */
-  line-height: 1.5;            /* Adjust line spacing for readability */
-  z-index: 1;                  /* Ensure visibility */
+  font-size: 16px;             /* Font size */
+  z-index: 1;                  /* Ensure text is visible */
 }
 
 
