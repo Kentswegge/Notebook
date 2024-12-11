@@ -16,10 +16,10 @@ body {
 }
 
 .image-container img {
-  display: block; /* Ensures the image is visible */
+  display: block; /* Ensure it's displayed */
+  width: auto; /* Let it size naturally */
   max-width: 100%; /* Prevent overflow */
-  height: auto; /* Maintains aspect ratio */
-  border: 2px solid #ffffff;
+  height: auto; /* Maintain aspect ratio */
 }
 
 .text-container {
