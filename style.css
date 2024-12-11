@@ -43,8 +43,11 @@ body {
   transform: translateY(-50%); /* Correct vertical alignment */
   color: white;                /* Text color */
   font-size: 16px;             /* Text size */
-  white-space: nowrap;         /* Prevent wrapping */
-  z-index: 1;                  /* Keep the text above other elements */
+  max-width: 300px;            /* Limit the width of the text block */
+  text-align: left;            /* Align the text content to the left */
+  white-space: normal;         /* Allow text to wrap if it exceeds the max-width */
+  line-height: 1.5;            /* Adjust line spacing for readability */
+  z-index: 1;                  /* Ensure visibility */
 }
 
 
