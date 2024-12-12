@@ -11,17 +11,28 @@ body {
   text-align: center;
 }
 
+/* App module to hold the particle animation */
+#app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;                   /* Ensure it stays in the background */
+}
+
+
 /* White bounding box */
 #image-container {
-  position: relative;   /* Establish this as the parent for the absolute description */
-  overflow: visible;    /* Allows content to flow outside the border */
-  width: 565px;         /* Adjusted width of the box */
-  height: 800px;        /* Adjusted height of the box */
+  position: relative;            /* Establish this as the parent for the absolute description */
+  overflow: visible;             /* Allows content to flow outside the border */
+  width: 565px;                  /* Adjusted width of the box */
+  height: 800px;                 /* Adjusted height of the box */
   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*overflow: hidden;     /* Prevent overflow */
+  /*overflow: hidden;            /* Prevent overflow */
   padding: 20px;
   box-sizing: border-box;
 }
@@ -31,12 +42,12 @@ body {
 #random-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;  /* Retain image aspect ratio */
-  padding: 0; /* No extra padding inside the image */
+  object-fit: contain;           /* Retain image aspect ratio */
+  padding: 0;                    /* No extra padding inside the image */
 }
 
 #image-container {
-  position: relative; /* Ensure positioning for the child elements */
+  position: relative;            /* Ensure positioning for the child elements */
 }
 
 /* Header-title styles here */
@@ -75,10 +86,10 @@ body {
 
 /* Button styling */
 #next-button {
-  position: fixed;     /* Keep button fixed at the bottom */
-  bottom: 5px;        /* Position the button below the box */
+  position: fixed;             /* Keep button fixed at the bottom */
+  bottom: 5px;                 /* Position the button below the box */
   left: 50%;
-  transform: translateX(-50%);  /* Center the button horizontally */
+  transform: translateX(-50%); /* Center the button horizontally */
   padding: 10px 20px;
   background-color: #000;
   border: 1px solid white;
@@ -86,7 +97,7 @@ body {
   border: 1;
   font-size: 16px;
   cursor: pointer;
-  z-index: 2;          /* Ensure button is on top of other elements */
+  z-index: 2;                  /* Ensure button is on top of other elements */
 }
 
 #next-button:hover {
@@ -95,9 +106,9 @@ body {
 
 /* Image rules to ensure proper resizing within the container */
 img {
-  max-width: 100%; /* Maximum width 100% of the container */
-  max-height: 100%; /* Maximum height 100% of the container */
-  object-fit: contain; /* Maintain aspect ratio */
+  max-width: 100%;             /* Maximum width 100% of the container */
+  max-height: 100%;            /* Maximum height 100% of the container */
+  object-fit: contain;         /* Maintain aspect ratio */
   display: block;
   margin: 0 auto;
   transition: all 0.3s ease; /* Optional: smooth transition when changing sizes */
