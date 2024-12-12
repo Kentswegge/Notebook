@@ -21,13 +21,13 @@ function initParticles() {
 
         if (random > 99) {
           color = 0xffd16e;
-          scale = 10;
+          scale = 3;
         } else if (random > 90 && random < 99) {
           color = _.sample([0x5370ff, 0x53a6ff]);
           scale = 2;
         } else {
-          color = 0xaaaaaa;
-          scale = 3;
+          color = 0xfff3f3;
+          scale = 2;
         }
 
           let material = new THREE.MeshBasicMaterial({
