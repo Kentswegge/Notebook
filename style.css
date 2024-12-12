@@ -42,7 +42,7 @@ body {
 /* Header-title styles here */
 .header-title {
   position: absolute;
-  top: -40px;                    /* Adjust as needed */
+  top: -30px;                    /* Adjust as needed */
   left: 0;                       /* Adjust to align with your preference */
   z-index: 10;                   /* Brings the title to the foreground */
   background-color: transparent; /* Ensures no unwanted background */
