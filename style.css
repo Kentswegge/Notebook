@@ -63,7 +63,8 @@ body {
   left: 50%;
   transform: translateX(-50%);  /* Center the button horizontally */
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #00F;
+  border: 1px solid white;
   color: white;
   border: none;
   font-size: 16px;
