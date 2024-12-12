@@ -74,7 +74,7 @@ body {
 /* Button styling */
 #next-button {
   position: fixed;     /* Keep button fixed at the bottom */
-  bottom: 20px;        /* Position the button below the box */
+  bottom: 5px;        /* Position the button below the box */
   left: 50%;
   transform: translateX(-50%);  /* Center the button horizontally */
   padding: 10px 20px;
