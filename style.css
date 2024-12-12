@@ -46,7 +46,7 @@ body {
   left: 0;                       /* Adjust to align with your preference */
   z-index: 10;                   /* Brings the title to the foreground */
   background-color: transparent; /* Ensures no unwanted background */
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: white;
 }
