@@ -11,16 +11,17 @@ body {
   text-align: center;
 }
 
-/* Container for the bounding box */
+/* White bounding box */
 #image-container {
-  position: relative; /* Establish this as the parent for the absolute description */
-  width: 565px;       /* Adjusted width of the box */
-  height: 800px;      /* Adjusted height of the box */
+  position: relative;   /* Establish this as the parent for the absolute description */
+  overflow: visible;    /* Allows content to flow outside the border */
+  width: 565px;         /* Adjusted width of the box */
+  height: 800px;        /* Adjusted height of the box */
   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent overflow */
+  /*overflow: hidden;     /* Prevent overflow */
   padding: 20px;
   box-sizing: border-box;
 }
@@ -41,12 +42,13 @@ body {
 /* Header-title styles here */
 .header-title {
   position: absolute;
-  top: -40px; /* Adjust as needed */
-  left: 0; /* Adjust to align with your preference */
+  top: -40px;                    /* Adjust as needed */
+  left: 0;                       /* Adjust to align with your preference */
+  z-index: 10;                   /* Brings the title to the foreground */
+  background-color: transparent; /* Ensures no unwanted background */
   font-size: 18px;
   font-weight: bold;
-  color: #000;
-  z-index: 2; /* Ensure it appears above other elements */
+  color: white;
 }
 
 /* Position for the description outside the box */
