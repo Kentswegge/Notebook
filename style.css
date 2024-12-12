@@ -78,10 +78,10 @@ body {
   left: 50%;
   transform: translateX(-50%);  /* Center the button horizontally */
   padding: 10px 20px;
-  background-color: #00F;
+  background-color: #000;
   border: 1px solid white;
   color: white;
-  border: none;
+  border: 1;
   font-size: 16px;
   cursor: pointer;
   z-index: 2;          /* Ensure button is on top of other elements */
