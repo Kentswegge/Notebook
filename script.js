@@ -1,3 +1,102 @@
+
+// Particle animation function
+function initParticles() {
+  const app = new Vue({
+    el: "#app",
+    data() {
+      return {
+        particles: []
+      };
+    },
+    methods: {
+      makeParticles() {
+        const tex = new THREE.TextureLoader().load(
+          "https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/particle.jpg"
+        );
+
+        for (let zpos = -1000; zpos < 1000; zpos += 20) {
+          let random = _.random(0, 100);
+
+          let color, scale;
+
+          if (random > 99) {
+            color = 0x00aa00;
+            scale = 50;
+          } else if (random > 90 && random < 99) {
+            color = _.sample([0xff55ff, 0x55ffff]);
+            scale = 20;
+          } else {
+            color = 0xaaaaaa;
+            scale = 10;
+          }
+
+          let material = new THREE.MeshBasicMaterial({
+            color: color,
+            alphaMap: tex,
+            transparent: true
+          });
+
+          let particle = new THREE.Sprite(material);
+
+          particle.position.x = Math.random() * 1000 - 500;
+          particle.position.y = Math.random() * 1000 - 500;
+
+          particle.position.z = zpos;
+
+          particle.scale.x = particle.scale.y = scale;
+
+          this.scene.add(particle);
+
+          this.particles.push(particle);
+        }
+      }
+    },
+    mounted() {
+      this.scene = new THREE.Scene();
+
+      this.camera = new THREE.PerspectiveCamera(
+        80,
+        window.innerWidth / window.innerHeight,
+        1,
+        4000
+      );
+
+      this.camera.position.z = 1000;
+
+      this.renderer = new THREE.WebGLRenderer();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+      document.getElementById("app").appendChild(this.renderer.domElement);
+
+      this.makeParticles();
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+
+        this.particles.forEach((particle) => {
+          particle.position.z += 0.5;
+
+          if (particle.position.z > 1000) {
+            particle.position.z -= 2000;
+          }
+        });
+
+        this.renderer.render(this.scene, this.camera);
+      };
+
+      animate();
+    }
+  });
+}
+
+// Initialize the particles
+initParticles();
+
+
+
+
+
+
 // Fetch the images.json file with cache-busting
 fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
   .then(response => response.json())
