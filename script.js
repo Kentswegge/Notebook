@@ -14,21 +14,21 @@ function initParticles() {
           "https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/particle.jpg"
         );
 
-        for (let zpos = -1000; zpos < 1000; zpos += 20) {
-          let random = _.random(0, 100);
+        for (let zpos = -500; zpos < 1000; zpos += 0.5) {
+        let random = _.random(0, 100);
 
-          let color, scale;
+        let color, scale;
 
-          if (random > 99) {
-            color = 0x00aa00;
-            scale = 50;
-          } else if (random > 90 && random < 99) {
-            color = _.sample([0xff55ff, 0x55ffff]);
-            scale = 20;
-          } else {
-            color = 0xaaaaaa;
-            scale = 10;
-          }
+        if (random > 99) {
+          color = 0xffd16e;
+          scale = 10;
+        } else if (random > 90 && random < 99) {
+          color = _.sample([0x5370ff, 0x53a6ff]);
+          scale = 2;
+        } else {
+          color = 0xaaaaaa;
+          scale = 3;
+        }
 
           let material = new THREE.MeshBasicMaterial({
             color: color,
