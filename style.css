@@ -34,6 +34,21 @@ body {
   padding: 0; /* No extra padding inside the image */
 }
 
+#image-container {
+  position: relative; /* Ensure positioning for the child elements */
+}
+
+/* Header-title styles here */
+.header-title {
+  position: absolute;
+  top: -40px; /* Adjust as needed */
+  left: 0; /* Adjust to align with your preference */
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  z-index: 2; /* Ensure it appears above other elements */
+}
+
 /* Position for the description outside the box */
 #image-description {
   position: absolute;          /* Positioned relative to the image container */
