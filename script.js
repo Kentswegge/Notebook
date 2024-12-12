@@ -14,7 +14,7 @@ function initParticles() {
           "https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/particle.jpg"
         );
 
-        for (let zpos = -1000; zpos < 1000; zpos += 1) {
+        for (let zpos = -1000; zpos < 1000; zpos += 2) {
         let random = _.random(0, 100);
 
         let color, scale;
