@@ -133,7 +133,16 @@ function showRandomImage() {
 
   imageElement.src = image.src;
   imageElement.alt = image.description;
-  descriptionElement.textContent = image.description;
+
+ // Split the description into two parts
+  const shortDescription = image.shortDescription || "Short description here.";
+  const longDescription = image.longDescription || "Long description here.";
+
+  // Insert the formatted description
+  descriptionElement.innerHTML = `
+    <p>${shortDescription}</p>
+    <p>${longDescription}</p>
+  `;
 
   // Adjust the image based on its aspect ratio
   adjustImageOrientation(imageElement);
@@ -141,6 +150,7 @@ function showRandomImage() {
   // Update the current index for the next round
   currentIndex = randomIndex;
 }
+
 
 // Adjust image orientation based on aspect ratio
 function adjustImageOrientation(image) {
