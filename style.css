@@ -61,19 +61,20 @@ body {
   color: white;
 }
 
-/* Position for the short description */
+/* Short description (bold title) styling */
 #short-description {
-  position: absolute;             /* Position relative to #image-container */
-  top: -30px;                     /* Slightly above the container */
-  right: -320px;                  /* Moves outside the right edge of the container */
-  background-color: transparent;  /* Optional: transparent background */
-  padding: 5px 10px;              /* Spacing around the text */
-  font-weight: bold;              /* Bold text */
-  color: white;                   /* Ensure consistency with other text */
-  text-align: left;               /* Align text to the left */
-  white-space: nowrap;            /* Prevent text from breaking into multiple lines */
-  z-index: 10;                    /* Keep it above other elements */
+  position: absolute;           /* Keeps its bounding box in place */
+  top: -30px;                   /* Adjust as needed */
+  right: 0;                     /* Keeps container positioned properly */
+  width: 300px;                 /* Fixed width of the container */
+  text-align: left;             /* Aligns text to the left within the container */
+  font-weight: bold;            /* Makes the text bold */
+  color: white;                 /* Text color */
+  white-space: normal;          /* Allows text to wrap */
+  word-wrap: break-word;        /* Handles long words */
+  line-height: 1.5;             /* Consistent line spacing */
 }
+
 
 /* Position for the description below the box */
 #image-description {
