@@ -18,20 +18,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;                   /* Ensure it stays in the background */
+  z-index: -1;                     /* Ensure it stays in the background */
 }
 
 /* White bounding box */
 #image-container {
-  position: relative;            /* Establish this as the parent for the absolute description */
-  overflow: visible;             /* Allows content to flow outside the border */
-  width: 565px;                  /* Adjusted width of the box */
-  height: 800px;                 /* Adjusted height of the box */
+  position: relative;              /* Establish this as the parent for the absolute description */
+  overflow: visible;               /* Allows content to flow outside the border */
+  width: 565px;                    /* Adjusted width of the box */
+  height: 800px;                   /* Adjusted height of the box */
   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*overflow: hidden;            /* Prevent overflow */
+  /*overflow: hidden;              /* Prevent overflow */
   padding: 20px;
   box-sizing: border-box;
 }
@@ -41,54 +41,66 @@ body {
 #random-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;           /* Retain image aspect ratio */
-  padding: 0;                    /* No extra padding inside the image */
+  object-fit: contain;            /* Retain image aspect ratio */
+  padding: 0;                     /* No extra padding inside the image */
 }
 
 #image-container {
-  position: relative;            /* Ensure positioning for the child elements */
+  position: relative;             /* Ensure positioning for the child elements */
 }
 
 /* Header-title styles here */
 .header-title {
   position: absolute;
-  top: -30px;                    /* Adjust as needed */
-  left: 0;                       /* Adjust to align with your preference */
-  z-index: 10;                   /* Brings the title to the foreground */
-  background-color: transparent; /* Ensures no unwanted background */
+  top: -30px;                     /* Adjust as needed */
+  left: 0;                        /* Adjust to align with your preference */
+  z-index: 10;                    /* Brings the title to the foreground */
+  background-color: transparent;  /* Ensures no unwanted background */
   font-size: 14px;
   font-weight: bold;
   color: white;
 }
 
-/* Position for the description outside the box */
-#image-description {
-  position: absolute;          /* Positioned relative to the image container */
-  right: 350px;                /* Place 20px outside the right edge of the container */
-  margin-left: 20px;           /* Add 20px spacing outside the container */
-  top: 45px;                   /* Center vertically with respect to the container */
-  transform: none;             /* Correct vertical alignment */
-  width: 300px;                /* Fixed width for the text box */
-  max-width: 300px;            /* Ensure the box does not grow beyond this width */
-  text-align: left;            /* Align all text to the left */
-  white-space: normal;         /* Allow wrapping for long sentences */
-  line-height: 1.5;            /* Add consistent line spacing */
-  overflow-wrap: break-word;   /* Handle long words gracefully */
-  word-wrap: break-word;       /* Compatibility for older browsers */
-  box-sizing: border-box;      /* Include padding/border in width calculations */
-  color: white;                /* Text color */
-  font-size: 16px;             /* Font size */
-  z-index: 1;                  /* Ensure text is visible */
+/* Position for the short description */
+#short-description {
+  position: absolute;             /* Position relative to #image-container */
+  top: -30px;                     /* Slightly above the container */
+  right: -320px;                  /* Moves outside the right edge of the container */
+  background-color: transparent;  /* Optional: transparent background */
+  padding: 5px 10px;              /* Spacing around the text */
+  font-weight: bold;              /* Bold text */
+  color: white;                   /* Ensure consistency with other text */
+  text-align: left;               /* Align text to the left */
+  white-space: nowrap;            /* Prevent text from breaking into multiple lines */
+  z-index: 10;                    /* Keep it above other elements */
 }
 
-
+/* Position for the description below the box */
+#image-description {
+  position: absolute;             /* Positioned relative to the image container */
+  right: 350px;                   /* Place 350px outside the right edge of the container */
+  margin-left: 20px;              /* Add 20px spacing outside the container */
+  top: 45px;                      /* Center vertically with respect to the container */
+  transform: none;                /* Correct vertical alignment */
+  width: 300px;                   /* Fixed width for the text box */
+  max-width: 300px;               /* Ensure the box does not grow beyond this width */
+  text-align: left;               /* Align all text to the left */
+  white-space: normal;            /* Allow wrapping for long sentences */
+  line-height: 1.5;               /* Add consistent line spacing */
+  overflow-wrap: break-word;      /* Handle long words gracefully */
+  word-wrap: break-word;          /* Compatibility for older browsers */
+  box-sizing: border-box;         /* Include padding/border in width calculations */
+  color: white;                   /* Text color */
+  font-size: 16px;                /* Font size */
+  z-index: 1;                     /* Ensure text is visible */
+}
 
 /* Button styling */
 #next-button {
-  position: fixed;             /* Keep button fixed at the bottom */
-  bottom: 5px;                 /* Position the button below the box */
+  position: fixed;                /* Keep button fixed at the bottom */
+  bottom: 5px;                    /* Position the button below the box */
   left: 50%;
-  transform: translateX(-50%); /* Center the button horizontally */
+  transform: translateX(-50%);    /* Center the button horizontally */
   padding: 10px 20px;
   background-color: #000;
   border: 1px solid white;
@@ -96,7 +108,7 @@ body {
   border: 1;
   font-size: 14px;
   cursor: pointer;
-  z-index: 2;                  /* Ensure button is on top of other elements */
+  z-index: 2;                     /* Ensure button is on top of other elements */
 }
 
 #next-button:hover {
@@ -105,10 +117,10 @@ body {
 
 /* Image rules to ensure proper resizing within the container */
 img {
-  max-width: 100%;             /* Maximum width 100% of the container */
-  max-height: 100%;            /* Maximum height 100% of the container */
-  object-fit: contain;         /* Maintain aspect ratio */
+  max-width: 100%;                /* Maximum width 100% of the container */
+  max-height: 100%;               /* Maximum height 100% of the container */
+  object-fit: contain;            /* Maintain aspect ratio */
   display: block;
   margin: 0 auto;
-  transition: all 0.3s ease; /* Optional: smooth transition when changing sizes */
+  transition: all 0.3s ease;      /* Optional: smooth transition when changing sizes */
 }
