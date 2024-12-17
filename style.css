@@ -65,7 +65,7 @@ body {
 #short-description {
   position: absolute;             /* Position relative to #image-container */
   top: -30px;                     /* Slightly above the container */
-  left: -320px;                  /* Moves outside the right edge of the container */
+  right: -320px;                  /* Moves outside the right edge of the container */
   background-color: transparent;  /* Optional: transparent background */
   padding: 5px 10px;              /* Spacing around the text */
   font-weight: bold;              /* Bold text */
