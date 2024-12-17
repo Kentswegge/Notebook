@@ -117,32 +117,36 @@ function showRandomImage() {
   }
 
   let randomIndex;
-  
+
   // Ensure the random index is different from the current one
   do {
     randomIndex = Math.floor(Math.random() * images.length);
   } while (randomIndex === currentIndex);
 
-  console.log("Current index:", currentIndex);  // Log the current image index
-  console.log("Random index chosen:", randomIndex);  // Log the new random image index
+  console.log("Current index:", currentIndex); // Log the current image index
+  console.log("Random index chosen:", randomIndex); // Log the new random image index
 
   const image = images[randomIndex];
 
+  // Select HTML elements
   const imageElement = document.getElementById("random-image");
-  const descriptionElement = document.getElementById("image-description");
+  const shortDescElement = document.getElementById("short-description");
+  const longDescElement = document.getElementById("image-description");
 
+  // Update image source and alt text
   imageElement.src = image.src;
-  imageElement.alt = image.description;
+  imageElement.alt = image.shortDescription || "Image description";
 
- // Split the description into two parts
-  const shortDescription = image.shortDescription || "Short description here.";
-  const longDescription = image.longDescription || "Long description here.";
+  // Update short description (always shown in bold)
+  shortDescElement.innerHTML = `<strong>${image.shortDescription || "No description available."}</strong>`;
 
-  // Insert the formatted description
-  descriptionElement.innerHTML = `
-    <p>${shortDescription}</p>
-    <p>${longDescription}</p>
-  `;
+  // Update long description (conditionally shown)
+  if (image.longDescription) {
+    longDescElement.textContent = image.longDescription;
+    longDescElement.style.display = "block"; // Ensure it is visible
+  } else {
+    longDescElement.style.display = "none"; // Hide if no long description
+  }
 
   // Adjust the image based on its aspect ratio
   adjustImageOrientation(imageElement);
@@ -151,20 +155,21 @@ function showRandomImage() {
   currentIndex = randomIndex;
 }
 
-
 // Adjust image orientation based on aspect ratio
 function adjustImageOrientation(image) {
-  const aspectRatio = image.naturalWidth / image.naturalHeight;
+  image.onload = () => { // Ensure the image is fully loaded
+    const aspectRatio = image.naturalWidth / image.naturalHeight;
 
-  if (aspectRatio > 1) {
-    // Landscape image: Scale width and adjust height
-    image.style.height = 'auto';
-    image.style.width = '100%';
-  } else {
-    // Portrait image: Scale height and adjust width
-    image.style.width = 'auto';
-    image.style.height = '100%';
-  }
+    if (aspectRatio > 1) {
+      // Landscape image: Scale width and adjust height
+      image.style.height = 'auto';
+      image.style.width = '100%';
+    } else {
+      // Portrait image: Scale height and adjust width
+      image.style.width = 'auto';
+      image.style.height = '100%';
+    }
+  };
 }
 
 // Event listener for the button
