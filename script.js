@@ -97,14 +97,6 @@ initParticles();
 
 
 
-// Array of images with their short and long descriptions
-const images = [
-  { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images/IMG_(1).jpg", shortDescription: "Transparent sculptures light up from the inside", longDescription: "The lights in the city is made for humans to see and navigate. Lights themselves\nlook industrial, abstract and I wonder what would happen to our experience if lights\nwere shaped like humans. A reminder that humans live in the city and that all that\nis here is made by us, for us." },
-  { src: "images/image2.jpg", shortDescription: "Short description 2", longDescription: "Long description 2" },
-  { src: "images/image3.jpg", shortDescription: "Short description 3", longDescription: "Long description 3" },
-  { src: "images/image4.jpg", shortDescription: "Short description 4", longDescription: "Long description 4" }
-];
-
 // Array to keep track of shown images
 let shownImages = [];
 
@@ -119,20 +111,20 @@ function shuffleArray(array) {
 // Function to show the next image
 function showNextImage() {
   // If all images have been shown, reset and shuffle for a fresh cycle
-  if (shownImages.length === images.length) {
+  if (shownImages.length === imageData.length) {
     shownImages = [];
-    shuffleArray(images); // Shuffle only if desired
+    shuffleArray(imageData); // Shuffle only if desired
   }
 
   // Find the next image that hasn't been shown
-  const nextImage = images.find(img => !shownImages.includes(img));
+  const nextImage = imageData.find(img => !shownImages.includes(img));
 
   // Update the displayed image and descriptions
   const imageElement = document.getElementById("random-image");
   const shortDescElement = document.getElementById("short-description");
   const longDescElement = document.getElementById("image-description");
 
-  imageElement.src = nextImage.src;
+  imageElement.src = nextImage.url;
   imageElement.alt = nextImage.shortDescription || "Image description";
 
   shortDescElement.innerHTML = `<strong>${nextImage.shortDescription || "No description available."}</strong>`;
