@@ -65,7 +65,7 @@ body {
 #short-description {
   position: absolute;           /* Keeps its bounding box in place */
   top: -30px;                   /* Adjust as needed */
-  right: -320px;                     /* Keeps container positioned properly */
+  right: -330px;                     /* Keeps container positioned properly */
   width: 300px;                 /* Fixed width of the container */
   text-align: left;             /* Aligns text to the left within the container */
   font-weight: bold;            /* Makes the text bold */
