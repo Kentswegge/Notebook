@@ -1,6 +1,6 @@
 const imageData = [
     {
-        "url": "IMG_(1).jpg,https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/IMG_(1).jpg",
+        "url": "https://raw.githubusercontent.com/Kentswegge/Notebook/main/images/IMG_(1).jpg",
         "shortDescription": "Transparent sculptures light up from the inside",
         "longDescription": "The lights in the city is made for humans to see and navigate. Lights themselves\nlook industrial, abstract and I wonder what would happen to our experience if lights\nwere shaped like humans. A reminder that humans live in the city and that all that\nis here is made by us, for us."
     },
