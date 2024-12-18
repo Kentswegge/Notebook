@@ -99,7 +99,7 @@ initParticles();
 
 // Array of images with their short and long descriptions
 const images = [
-  { src: "images/image1.jpg", shortDescription: "Short description 1", longDescription: "Long description 1" },
+  { src: "https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images/IMG_(1).jpg", shortDescription: "Transparent sculptures light up from the inside", longDescription: "The lights in the city is made for humans to see and navigate. Lights themselves\nlook industrial, abstract and I wonder what would happen to our experience if lights\nwere shaped like humans. A reminder that humans live in the city and that all that\nis here is made by us, for us." },
   { src: "images/image2.jpg", shortDescription: "Short description 2", longDescription: "Long description 2" },
   { src: "images/image3.jpg", shortDescription: "Short description 3", longDescription: "Long description 3" },
   { src: "images/image4.jpg", shortDescription: "Short description 4", longDescription: "Long description 4" }
