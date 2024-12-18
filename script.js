@@ -97,80 +97,78 @@ initParticles();
 
 
 
-// Fetch the images.json file with cache-busting
-fetch('https://raw.githubusercontent.com/Kentswegge/Notebook/refs/heads/main/images.json?nocache=' + new Date().getTime())
-  .then(response => response.json())
-  .then(data => {
-    images = data;
-    console.log("Images loaded:", images);
-    showRandomImage(); // Show a random image initially
-  })
-  .catch(error => console.error("Error fetching images:", error));
+// Array of images with their short and long descriptions
+const images = [
+  { src: "images/image1.jpg", shortDescription: "Short description 1", longDescription: "Long description 1" },
+  { src: "images/image2.jpg", shortDescription: "Short description 2", longDescription: "Long description 2" },
+  { src: "images/image3.jpg", shortDescription: "Short description 3", longDescription: "Long description 3" },
+  { src: "images/image4.jpg", shortDescription: "Short description 4", longDescription: "Long description 4" }
+];
 
-let currentIndex = -1; // Track the current image index
+// Array to keep track of shown images
+let shownImages = [];
 
-// Function to show a random image and handle aspect ratio
-function showRandomImage() {
-  if (images.length === 0) {
-    console.log("No images loaded.");
-    return;
+// Function to shuffle an array (optional, if you want randomness)
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Function to show the next image
+function showNextImage() {
+  // If all images have been shown, reset and shuffle for a fresh cycle
+  if (shownImages.length === images.length) {
+    shownImages = [];
+    shuffleArray(images); // Shuffle only if desired
   }
 
-  let randomIndex;
+  // Find the next image that hasn't been shown
+  const nextImage = images.find(img => !shownImages.includes(img));
 
-  // Ensure the random index is different from the current one
-  do {
-    randomIndex = Math.floor(Math.random() * images.length);
-  } while (randomIndex === currentIndex);
-
-  console.log("Current index:", currentIndex); // Log the current image index
-  console.log("Random index chosen:", randomIndex); // Log the new random image index
-
-  const image = images[randomIndex];
-
-  // Select HTML elements
+  // Update the displayed image and descriptions
   const imageElement = document.getElementById("random-image");
   const shortDescElement = document.getElementById("short-description");
   const longDescElement = document.getElementById("image-description");
 
-  // Update image source and alt text
-  imageElement.src = image.src;
-  imageElement.alt = image.shortDescription || "Image description";
+  imageElement.src = nextImage.src;
+  imageElement.alt = nextImage.shortDescription || "Image description";
 
-  // Update short description (always shown in bold)
-  shortDescElement.innerHTML = `<strong>${image.shortDescription || "No description available."}</strong>`;
-
-  // Update long description (conditionally shown)
-  if (image.longDescription) {
-    longDescElement.textContent = image.longDescription;
-    longDescElement.style.display = "block"; // Ensure it is visible
+  shortDescElement.innerHTML = `<strong>${nextImage.shortDescription || "No description available."}</strong>`;
+  if (nextImage.longDescription) {
+    longDescElement.textContent = nextImage.longDescription;
+    longDescElement.style.display = "block"; // Show long description
   } else {
     longDescElement.style.display = "none"; // Hide if no long description
   }
 
-  // Adjust the image based on its aspect ratio
+  // Adjust the image's orientation
   adjustImageOrientation(imageElement);
 
-  // Update the current index for the next round
-  currentIndex = randomIndex;
+  // Mark this image as shown
+  shownImages.push(nextImage);
 }
 
-// Adjust image orientation based on aspect ratio
+// Function to adjust the image's orientation based on its aspect ratio
 function adjustImageOrientation(image) {
-  image.onload = () => { // Ensure the image is fully loaded
+  image.onload = () => {
     const aspectRatio = image.naturalWidth / image.naturalHeight;
 
     if (aspectRatio > 1) {
-      // Landscape image: Scale width and adjust height
-      image.style.height = 'auto';
-      image.style.width = '100%';
+      // Landscape: Full width, auto height
+      image.style.width = "100%";
+      image.style.height = "auto";
     } else {
-      // Portrait image: Scale height and adjust width
-      image.style.width = 'auto';
-      image.style.height = '100%';
+      // Portrait: Full height, auto width
+      image.style.width = "auto";
+      image.style.height = "100%";
     }
   };
 }
 
-// Event listener for the button
-document.getElementById("next-button").addEventListener("click", showRandomImage);
+// Event listener for the "Next Image" button
+document.getElementById("next-button").addEventListener("click", showNextImage);
+
+// Initialize the first image when the page loads
+window.onload = showNextImage;
