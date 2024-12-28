@@ -26,9 +26,9 @@ body {
 #image-container {
   position: relative;
   display: inline-block;
-  overflow: visible;               /* Allows content to flow outside the border */
-  width: 565px;                    /* Adjusted width of the box */
-  height: 800px;                   
+  width: 50vw; /* Adjust this value to control the size based on viewport width */
+  max-width: 90%; /* Ensure it doesn't exceed screen size */
+  aspect-ratio: 565 / 800; /* Lock aspect ratio */
   border: 1px solid white;
   padding: 10px;
   box-sizing: border-box;
@@ -37,11 +37,14 @@ body {
 
 /* Image styling */
 #random-image {
-  display: block;
-  max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fills the container's width */
+  height: 100%; /* Fills the container's height */
+  object-fit: contain; /* Maintains the image's aspect ratio */
 }
+
 
 /* Short description styling */
 #short-description {
