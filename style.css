@@ -1,4 +1,4 @@
-/* Ensure the body takes up the full viewport and centers content */
+/* General styling */
 body {
   margin: 0;
   display: flex;
@@ -11,7 +11,7 @@ body {
   text-align: center;
 }
 
-/* App module to hold the particle animation */
+/* Background particle animation */
 #app {
   position: fixed;
   top: 0;
@@ -21,29 +21,27 @@ body {
   z-index: -1;
 }
 
-/* White bounding box */
+/* Container for the image with a white border */
 #image-container {
   position: relative;
-  overflow: visible;
-  width: 565px;
-  height: 800px;
+  width: 300px; /* Adjusted for smaller screens */
+  height: 400px; /* Ensures consistent border around image */
   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
-/* Style for the image inside the box */
+/* Image styling */
 #random-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  padding: 0;
 }
 
-/* Header-title styles */
+/* Header title (IDEA DIARY) */
 .header-title {
   position: absolute;
   top: -30px;
@@ -53,39 +51,32 @@ body {
   font-size: 14px;
   font-weight: bold;
   color: white;
+  text-align: center;
+  width: 100%;
 }
 
-/* Short description (bold title) styling */
+/* Short description styling */
 #short-description {
-  position: absolute;
-  top: -5px;
-  right: -330px;
-  width: 300px;
+  position: relative;
+  margin-top: 10px;
   text-align: left;
   font-weight: bold;
   color: white;
+  line-height: 1.5;
   white-space: normal;
   word-wrap: break-word;
-  line-height: 1.5;
+  max-width: 300px;
 }
 
-/* Position for the description below the box */
+/* Long description styling */
 #image-description {
-  position: absolute;
-  right: -330px;
-  margin-left: 20px;
-  top: 80px;
-  width: 300px;
-  max-width: 300px;
+  position: relative;
+  margin-top: 10px;
   text-align: left;
-  white-space: normal;
   line-height: 1.5;
-  overflow-wrap: break-word;
+  white-space: normal;
   word-wrap: break-word;
-  box-sizing: border-box;
-  color: white;
-  font-size: 16px;
-  z-index: 1;
+  max-width: 300px;
 }
 
 /* Button styling */
@@ -95,12 +86,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: #000;
+  background-color: black;
   border: 1px solid white;
   color: white;
   font-size: 14px;
   cursor: pointer;
-  z-index: 2;
 }
 
 #next-button:hover {
@@ -109,24 +99,21 @@ body {
 
 /* Responsive Design for Medium Screens */
 @media (max-width: 768px) {
-  #image-container {
-    width: 90%;
-    height: auto;
+  body {
     flex-direction: column;
+  }
+
+  #image-container {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
   }
 
   #short-description,
   #image-description {
-    position: relative;
-    right: auto;
-    top: auto;
-    margin: 10px 0;
-    width: 90%;
-    text-align: center;
-  }
-
-  #random-image {
-    max-height: 500px;
+    max-width: 300px;
+    text-align: left;
+    margin: 0 auto;
   }
 
   .header-title {
@@ -139,48 +126,39 @@ body {
   body {
     flex-direction: column;
     height: auto;
-  }
-
-  #image-container {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    border: 1px solid white; /* Ensures the border only surrounds the image */
     padding: 10px;
   }
 
-  .header-title {
-    position: relative; /* Fix title positioning */
-    top: auto;
-    left: auto;
-    margin-bottom: 10px;
-    font-size: 12px; /* Slightly smaller for visibility */
-    text-align: center;
+  #image-container {
+    width: 300px;
+    height: 400px;
+    margin-bottom: 20px; /* Space between image and text */
   }
 
   #random-image {
     max-width: 100%;
-    max-height: 300px;
+    max-height: 100%;
     margin: 0 auto;
   }
 
   #short-description {
     margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    width: 100%;
-    font-size: 14px; /* Adjust size for readability */
+    text-align: left;
+    margin: 0 auto;
+    max-width: 300px;
   }
 
   #image-description {
     margin-top: 10px;
-    text-align: center;
-    width: 100%;
-    font-size: 14px;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 300px;
   }
 
-  #next-button {
-    padding: 8px 16px;
+  .header-title {
+    position: relative;
     font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
   }
 }
