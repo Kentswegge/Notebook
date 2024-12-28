@@ -9,6 +9,7 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
+  flex-direction: column; /* Defaults to stacking for smaller devices */
 }
 
 /* Background particle animation */
@@ -21,62 +22,56 @@ body {
   z-index: -1;
 }
 
-/* Container for the image with a white border */
+/* Container for the image with a dynamic white border */
 #image-container {
-  position: relative;
-  width: 300px; /* Adjusted for smaller screens */
-  height: 400px; /* Ensures consistent border around image */
-  border: 1px solid white;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  border: 1px solid white;
   box-sizing: border-box;
+  padding: 10px;
+  max-width: 50%; /* 50% of screen width on larger screens */
+  height: auto; /* Automatically adjusts for the image's aspect ratio */
+  margin: 10px;
 }
 
 /* Image styling */
 #random-image {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
   object-fit: contain;
 }
 
 /* Header title (IDEA DIARY) */
 .header-title {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  z-index: 10;
-  background-color: transparent;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
-  color: white;
-  text-align: center;
-  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Text container for short and long descriptions */
+#text-container {
+  display: flex;
+  flex-direction: column; /* Text stacks vertically */
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 20px;
+  max-width: 45%;
 }
 
 /* Short description styling */
 #short-description {
-  position: relative;
-  margin-top: 10px;
-  text-align: left;
   font-weight: bold;
   color: white;
   line-height: 1.5;
-  white-space: normal;
-  word-wrap: break-word;
-  max-width: 300px;
+  margin-bottom: 10px;
 }
 
 /* Long description styling */
 #image-description {
-  position: relative;
-  margin-top: 10px;
-  text-align: left;
   line-height: 1.5;
-  white-space: normal;
-  word-wrap: break-word;
-  max-width: 300px;
+  color: white;
 }
 
 /* Button styling */
@@ -99,66 +94,40 @@ body {
 
 /* Responsive Design for Medium Screens */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
   #image-container {
-    width: 300px;
-    height: 400px;
-    margin: 0 auto;
+    max-width: 70%; /* Larger image on medium screens */
   }
 
-  #short-description,
-  #image-description {
-    max-width: 300px;
-    text-align: left;
-    margin: 0 auto;
+  #text-container {
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center; /* Center text for better readability */
   }
 
-  .header-title {
-    font-size: 12px;
+  #short-description {
+    margin-bottom: 10px;
   }
 }
 
 /* Responsive Design for Small Screens */
 @media (max-width: 480px) {
   body {
-    flex-direction: column;
-    height: auto;
+    flex-direction: column; /* Stacks everything vertically */
     padding: 10px;
   }
 
   #image-container {
-    width: 300px;
-    height: 400px;
-    margin-bottom: 20px; /* Space between image and text */
+    max-width: 80%; /* Adjust size for portrait screens */
+    margin: 0 auto 20px;
   }
 
   #random-image {
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
+    width: 100%; /* Ensures full width for smaller screens */
   }
 
-  #short-description {
-    margin-top: 10px;
-    text-align: left;
+  #text-container {
+    max-width: 100%; /* Text takes full width */
     margin: 0 auto;
-    max-width: 300px;
-  }
-
-  #image-description {
-    margin-top: 10px;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 300px;
-  }
-
-  .header-title {
-    position: relative;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 10px;
+    text-align: center; /* Center-aligns text for small screens */
   }
 }
