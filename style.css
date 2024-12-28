@@ -1,133 +1,101 @@
-/* General styling */
+/* General styles for all devices */
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   color: white;
   font-family: Arial, sans-serif;
-  text-align: center;
-  flex-direction: column; /* Defaults to stacking for smaller devices */
 }
 
-/* Background particle animation */
-#app {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Container for the image with a dynamic white border */
+/* Common container styles */
 #image-container {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid white;
-  box-sizing: border-box;
   padding: 10px;
-  max-width: 50%; /* 50% of screen width on larger screens */
-  height: auto; /* Automatically adjusts for the image's aspect ratio */
-  margin: 10px;
+  box-sizing: border-box;
 }
 
-/* Image styling */
 #random-image {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-/* Header title (IDEA DIARY) */
+#text-container {
+  margin-left: 20px;
+}
+
 .header-title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* Text container for short and long descriptions */
-#text-container {
-  display: flex;
-  flex-direction: column; /* Text stacks vertically */
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-  margin-left: 20px;
-  max-width: 45%;
-}
-
-/* Short description styling */
-#short-description {
-  font-weight: bold;
-  color: white;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-/* Long description styling */
-#image-description {
-  line-height: 1.5;
-  color: white;
-}
-
-/* Button styling */
 #next-button {
   position: fixed;
-  bottom: 5px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: black;
   border: 1px solid white;
+  background-color: black;
   color: white;
   font-size: 14px;
   cursor: pointer;
 }
 
-#next-button:hover {
-  background-color: #009;
-}
+/* Scenario 1: Monitors */
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
 
-/* Responsive Design for Medium Screens */
-@media (max-width: 768px) {
   #image-container {
-    max-width: 70%; /* Larger image on medium screens */
+    width: auto; /* Adjusts based on content */
+    max-width: 50%;
   }
 
   #text-container {
-    max-width: 80%;
-    margin: 20px auto;
-    text-align: center; /* Center text for better readability */
+    flex: 1;
+    text-align: left;
+    max-width: 45%;
   }
 
-  #short-description {
-    margin-bottom: 10px;
+  #random-image {
+    width: auto;
   }
 }
 
-/* Responsive Design for Small Screens */
-@media (max-width: 480px) {
+/* Scenario 2: Mobile Devices */
+@media (max-width: 1023px) {
   body {
-    flex-direction: column; /* Stacks everything vertically */
+    flex-direction: column;
     padding: 10px;
   }
 
   #image-container {
-    max-width: 80%; /* Adjust size for portrait screens */
-    margin: 0 auto 20px;
+    width: 90%; /* Full width on mobile */
+    margin-bottom: 20px;
   }
 
   #random-image {
-    width: 100%; /* Ensures full width for smaller screens */
+    max-width: 100%;
+    height: auto;
   }
 
   #text-container {
-    max-width: 100%; /* Text takes full width */
+    width: 100%;
+    text-align: center;
     margin: 0 auto;
-    text-align: center; /* Center-aligns text for small screens */
+  }
+
+  #next-button {
+    font-size: 12px;
   }
 }
