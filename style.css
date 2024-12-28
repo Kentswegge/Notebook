@@ -26,8 +26,9 @@ body {
 #image-container {
   position: relative;
   display: inline-block;
-  width: auto;
-  max-width: 90%; /* Keeps it responsive */
+  overflow: visible;               /* Allows content to flow outside the border */
+  width: 565px;                    /* Adjusted width of the box */
+  height: 800px;                   
   border: 1px solid white;
   padding: 10px;
   box-sizing: border-box;
@@ -44,6 +45,7 @@ body {
 
 /* Short description styling */
 #short-description {
+  position: absolute;
   margin-top: 20px;
   font-weight: bold;
   color: white;
@@ -53,6 +55,7 @@ body {
 
 /* Long description styling */
 #image-description {
+  position: absolute;
   margin-top: 10px;
   color: white;
   text-align: left;
@@ -71,6 +74,7 @@ body {
 
 /* Button styling */
 #next-button {
+  position: absolute;
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #000;
