@@ -130,35 +130,44 @@ img {
 /* Smaller than desktop screens will be affected by this */
 
 @media (max-width: 768px) {
-  #image-container {
-    width: 90vw; /* Scale the container width */
-    aspect-ratio: 565 / 800; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the container */
+  body {
+    margin: 0;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;                /* Prevent content overflow */
+  }
+
+  #image-container {
+    width: 90vw;                     /* Responsive width */
+    max-width: 565px;                /* Max width for larger screens */
+    aspect-ratio: 565 / 800;         /* Lock aspect ratio */
     border: 1px solid white;
-    padding: 10px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
   }
 
   #random-image {
-    width: 100%; /* Scale image with container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Avoid distortion */
-    margin-bottom: 20px; /* Add space below the image */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
   }
 
-  /* Short description */
-  #short-description, #image-description {
-    position: static; /* Remove absolute positioning */
-    width: 100%; /* Match container width */
-    max-width: 90%; /* Keep some padding from edges */
-    margin: 10px auto; /* Center text with some spacing */
-    text-align: center; /* Align text */
-    line-height: 1.5; /* Ensure readability */
-    font-size: 14px; /* Adjust font size for smaller screens */
+  #short-description,
+  #image-description {
+    position: static;
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 14px;
   }
 
   /* Adjust long description position */
