@@ -9,6 +9,7 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 /* App module to hold the particle animation */
@@ -18,44 +19,43 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;                     /* Ensure it stays in the background */
+  z-index: -1; /* Ensure it stays in the background */
 }
 
 /* White bounding box */
 #image-container {
-  position: relative;              /* Establish this as the parent for the absolute description */
-  overflow: visible;               /* Allows content to flow outside the border */
-  width: 565px;                    /* Adjusted width of the box */
-  height: 800px;                   /* Adjusted height of the box */
+  position: relative; /* Establish this as the parent for the absolute description */
+  overflow: visible; /* Allows content to flow outside the border */
+  width: 565px; /* Adjusted width of the box */
+  height: 800px; /* Adjusted height of the box */
   border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  /*overflow: hidden;              /* Prevent overflow */
   padding: 20px;
   box-sizing: border-box;
+  margin: 0 auto; /* Center the container */
 }
-
 
 /* Style for the image inside the box */
 #random-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;            /* Retain image aspect ratio */
-  padding: 0;                     /* No extra padding inside the image */
+  object-fit: contain; /* Retain image aspect ratio */
+  padding: 0; /* No extra padding inside the image */
 }
 
 #image-container {
-  position: relative;             /* Ensure positioning for the child elements */
+  position: relative; /* Ensure positioning for the child elements */
 }
 
 /* Header-title styles here */
 .header-title {
   position: absolute;
-  top: -30px;                     /* Adjust as needed */
-  left: 0;                        /* Adjust to align with your preference */
-  z-index: 10;                    /* Brings the title to the foreground */
-  background-color: transparent;  /* Ensures no unwanted background */
+  top: -30px; /* Adjust as needed */
+  left: 0; /* Adjust to align with your preference */
+  z-index: 10; /* Brings the title to the foreground */
+  background-color: transparent; /* Ensures no unwanted background */
   font-size: 14px;
   font-weight: bold;
   color: white;
@@ -63,53 +63,51 @@ body {
 
 /* Short description (bold title) styling */
 #short-description {
-  position: absolute;           /* Keeps its bounding box in place */
-  top: -5px;                   /* Adjust as needed */
-  right: -330px;                     /* Keeps container positioned properly */
-  width: 300px;                 /* Fixed width of the container */
-  text-align: left;             /* Aligns text to the left within the container */
-  font-weight: bold;            /* Makes the text bold */
-  color: white;                 /* Text color */
-  white-space: normal;          /* Allows text to wrap */
-  word-wrap: break-word;        /* Handles long words */
-  line-height: 1.5;             /* Consistent line spacing */
+  position: absolute; /* Keeps its bounding box in place */
+  top: -5px; /* Adjust as needed */
+  right: -330px; /* Keeps container positioned properly */
+  width: 300px; /* Fixed width of the container */
+  text-align: left; /* Aligns text to the left within the container */
+  font-weight: bold; /* Makes the text bold */
+  color: white; /* Text color */
+  white-space: normal; /* Allows text to wrap */
+  word-wrap: break-word; /* Handles long words */
+  line-height: 1.5; /* Consistent line spacing */
 }
-
 
 /* Position for the description below the box */
 #image-description {
-  position: absolute;             /* Positioned relative to the image container */
-  right: -330px;                   /* Place 350px outside the right edge of the container */
-  margin-left: 20px;              /* Add 20px spacing outside the container */
-  top: 80px;                      /* Center vertically with respect to the container */
-  transform: none;                /* Correct vertical alignment */
-  width: 300px;                   /* Fixed width for the text box */
-  max-width: 300px;               /* Ensure the box does not grow beyond this width */
-  text-align: left;               /* Align all text to the left */
-  white-space: normal;            /* Allow wrapping for long sentences */
-  line-height: 1.5;               /* Add consistent line spacing */
-  overflow-wrap: break-word;      /* Handle long words gracefully */
-  word-wrap: break-word;          /* Compatibility for older browsers */
-  box-sizing: border-box;         /* Include padding/border in width calculations */
-  color: white;                   /* Text color */
-  font-size: 16px;                /* Font size */
-  z-index: 1;                     /* Ensure text is visible */
+  position: absolute; /* Positioned relative to the image container */
+  right: -330px; /* Place 350px outside the right edge of the container */
+  margin-left: 20px; /* Add 20px spacing outside the container */
+  top: 80px; /* Center vertically with respect to the container */
+  transform: none; /* Correct vertical alignment */
+  width: 300px; /* Fixed width for the text box */
+  max-width: 300px; /* Ensure the box does not grow beyond this width */
+  text-align: left; /* Align all text to the left */
+  white-space: normal; /* Allow wrapping for long sentences */
+  line-height: 1.5; /* Add consistent line spacing */
+  overflow-wrap: break-word; /* Handle long words gracefully */
+  word-wrap: break-word; /* Compatibility for older browsers */
+  box-sizing: border-box; /* Include padding/border in width calculations */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  z-index: 1; /* Ensure text is visible */
 }
 
 /* Button styling */
 #next-button {
-  position: fixed;                /* Keep button fixed at the bottom */
-  bottom: 5px;                    /* Position the button below the box */
+  position: fixed; /* Keep button fixed at the bottom */
+  bottom: 5px; /* Position the button below the box */
   left: 50%;
-  transform: translateX(-50%);    /* Center the button horizontally */
+  transform: translateX(-50%); /* Center the button horizontally */
   padding: 10px 20px;
   background-color: #000;
   border: 1px solid white;
   color: white;
-  border: 1;
   font-size: 14px;
   cursor: pointer;
-  z-index: 2;                     /* Ensure button is on top of other elements */
+  z-index: 2; /* Ensure button is on top of other elements */
 }
 
 #next-button:hover {
@@ -118,17 +116,15 @@ body {
 
 /* Image rules to ensure proper resizing within the container */
 img {
-  max-width: 100%;                /* Maximum width 100% of the container */
-  max-height: 100%;               /* Maximum height 100% of the container */
-  object-fit: contain;            /* Maintain aspect ratio */
+  max-width: 100%; /* Maximum width 100% of the container */
+  max-height: 100%; /* Maximum height 100% of the container */
+  object-fit: contain; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto;
-  transition: all 0.3s ease;      /* Optional: smooth transition when changing sizes */
+  transition: all 0.3s ease; /* Optional: smooth transition when changing sizes */
 }
 
-
-/* Smaller than desktop screens will be affected by this */
-
+/* Mobile adjustments */
 @media (max-width: 768px) {
   body {
     margin: 0;
@@ -137,20 +133,19 @@ img {
     align-items: center;
     height: 100vh;
     background-color: black;
-    overflow: hidden;                /* Prevent content overflow */
+    overflow: hidden; /* Prevent content overflow */
   }
 
   #image-container {
-    width: 90vw;                     /* Responsive width */
-    max-width: 565px;                /* Max width for larger screens */
-    aspect-ratio: 565 / 800;         /* Lock aspect ratio */
+    width: 90vw; /* Responsive width */
+    max-width: 565px; /* Max width for larger screens */
+    aspect-ratio: 565 / 800; /* Lock aspect ratio */
     border: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto; /* Center the container */
   }
 
   #random-image {
@@ -185,4 +180,3 @@ img {
     display: block; /* Ensure it displays as a block */
   }
 }
-
