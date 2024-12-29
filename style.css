@@ -175,7 +175,7 @@ img {
 
   /* Adjust button position */
   #next-button {
-    position: relative; /* Move it relative to the flow */
+    position: absolute; /* Move it relative to the flow */
     margin: 20px auto; /* Center horizontally */
     display: block; /* Ensure it displays as a block */
   }
