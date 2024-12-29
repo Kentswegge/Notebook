@@ -4,12 +4,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   background-color: black;
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden; /* Prevent content overflow */
 }
 
 /* App module to hold the particle animation */
@@ -126,27 +126,29 @@ img {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
-    overflow: hidden; /* Prevent content overflow */
+  #image-container {
+    width: 90vw;
+    max-width: 565px;
+    height: auto;
+    aspect-ratio: 565 / 800; /* Maintain aspect ratio */
+    margin: auto; /* Center */
+    padding: 10px;
+    border: 1px solid white;
   }
-
+  
   #image-container {
     width: 90vw; /* Responsive width */
-    max-width: 565px; /* Max width for larger screens */
-    aspect-ratio: 565 / 800; /* Lock aspect ratio */
+    max-width: 565px; /* Cap the width */
+    height: auto; /* Allow height to adjust */
+    aspect-ratio: 565 / 800; /* Maintain aspect ratio */
     border: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto; /* Center the container */
-  }
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Prevent content overflow */
+}
 
   #random-image {
     max-width: 100%;
@@ -159,10 +161,8 @@ img {
   #image-description {
     position: static;
     width: 90%;
-    max-width: 300px;
     margin: 10px auto;
     text-align: center;
-    font-size: 14px;
   }
 
   /* Adjust long description position */
