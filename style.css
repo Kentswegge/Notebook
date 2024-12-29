@@ -35,6 +35,14 @@ body {
   background-color: transparent;
 }
 
+  /* Centering the container */
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
 /* Image styling */
 #random-image {
   width: 100%; /* Fit the width of the container */
