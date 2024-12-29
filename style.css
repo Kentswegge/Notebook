@@ -1,4 +1,4 @@
-/* General body styling */
+/* Ensure the body takes up the full viewport and centers content */
 body {
   margin: 0;
   display: flex;
@@ -9,116 +9,119 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  box-sizing: border-box;
 }
 
-/* Particle animation background */
+/* App module to hold the particle animation */
 #app {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1;                     /* Ensure it stays in the background */
 }
 
-/* White bounding box for the image only */
+/* White bounding box */
 #image-container {
-  position: relative;
-  display: inline-block;
-  width: 28vw; /* Width as a percentage of the viewport */
-  max-width: 90%; /* Prevent it from being too large on small screens */
-  aspect-ratio: 565 / 800; /* Maintain aspect ratio of the container */
+  position: relative;              /* Establish this as the parent for the absolute description */
+  overflow: visible;               /* Allows content to flow outside the border */
+  width: 565px;                    /* Adjusted width of the box */
+  height: 800px;                   /* Adjusted height of the box */
   border: 1px solid white;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*overflow: hidden;              /* Prevent overflow */
+  padding: 20px;
   box-sizing: border-box;
-  background-color: transparent;
 }
 
 
-  /* Centering the container */
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-}
-
-/* Image styling */
+/* Style for the image inside the box */
 #random-image {
-  width: 100%; /* Fit the width of the container */
-  height: 100%; /* Fit the height of the container */
-  object-fit: contain; /* Maintain aspect ratio */
-  display: block; /* Remove extra spacing caused by inline-block images */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;            /* Retain image aspect ratio */
+  padding: 0;                     /* No extra padding inside the image */
 }
 
-
-/* Short description styling */
-#short-description {
-  position: absolute;
-  margin-top: 20px;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-  line-height: 1.5;
+#image-container {
+  position: relative;             /* Ensure positioning for the child elements */
 }
 
-/* Long description styling */
-#image-description {
-  position: absolute;
-  margin-top: 10px;
-  color: white;
-  text-align: left;
-  line-height: 1.5;
-}
-
-/* Header title */
+/* Header-title styles here */
 .header-title {
   position: absolute;
-  top: -30px;
-  left: 0;
+  top: -30px;                     /* Adjust as needed */
+  left: 0;                        /* Adjust to align with your preference */
+  z-index: 10;                    /* Brings the title to the foreground */
+  background-color: transparent;  /* Ensures no unwanted background */
   font-size: 14px;
   font-weight: bold;
   color: white;
+}
+
+/* Short description (bold title) styling */
+#short-description {
+  position: absolute;           /* Keeps its bounding box in place */
+  top: -5px;                   /* Adjust as needed */
+  right: -330px;                     /* Keeps container positioned properly */
+  width: 300px;                 /* Fixed width of the container */
+  text-align: left;             /* Aligns text to the left within the container */
+  font-weight: bold;            /* Makes the text bold */
+  color: white;                 /* Text color */
+  white-space: normal;          /* Allows text to wrap */
+  word-wrap: break-word;        /* Handles long words */
+  line-height: 1.5;             /* Consistent line spacing */
+}
+
+
+/* Position for the description below the box */
+#image-description {
+  position: absolute;             /* Positioned relative to the image container */
+  right: -330px;                   /* Place 350px outside the right edge of the container */
+  margin-left: 20px;              /* Add 20px spacing outside the container */
+  top: 80px;                      /* Center vertically with respect to the container */
+  transform: none;                /* Correct vertical alignment */
+  width: 300px;                   /* Fixed width for the text box */
+  max-width: 300px;               /* Ensure the box does not grow beyond this width */
+  text-align: left;               /* Align all text to the left */
+  white-space: normal;            /* Allow wrapping for long sentences */
+  line-height: 1.5;               /* Add consistent line spacing */
+  overflow-wrap: break-word;      /* Handle long words gracefully */
+  word-wrap: break-word;          /* Compatibility for older browsers */
+  box-sizing: border-box;         /* Include padding/border in width calculations */
+  color: white;                   /* Text color */
+  font-size: 16px;                /* Font size */
+  z-index: 1;                     /* Ensure text is visible */
 }
 
 /* Button styling */
 #next-button {
-  position: absolute;
-  margin-top: 20px;
+  position: fixed;                /* Keep button fixed at the bottom */
+  bottom: 5px;                    /* Position the button below the box */
+  left: 50%;
+  transform: translateX(-50%);    /* Center the button horizontally */
   padding: 10px 20px;
   background-color: #000;
   border: 1px solid white;
   color: white;
+  border: 1;
   font-size: 14px;
   cursor: pointer;
+  z-index: 2;                     /* Ensure button is on top of other elements */
 }
 
 #next-button:hover {
   background-color: #009;
 }
 
-/* Responsive styling for mobile */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
-
-  #image-container {
-    margin: 0 auto;
-    max-width: 100%;
-  }
-
-  #short-description, #image-description {
-    text-align: center;
-    margin: 10px auto;
-  }
-
-  #next-button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 15px;
-  }
+/* Image rules to ensure proper resizing within the container */
+img {
+  max-width: 100%;                /* Maximum width 100% of the container */
+  max-height: 100%;               /* Maximum height 100% of the container */
+  object-fit: contain;            /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease;      /* Optional: smooth transition when changing sizes */
 }
