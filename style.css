@@ -37,11 +37,10 @@ body {
 
 /* Image styling */
 #random-image {
-  top: 50%;
-  left: 50%;
-  width: 100%; /* Fills the container's width */
-  height: 100%; /* Fills the container's height */
-  object-fit: contain; /* Maintains the image's aspect ratio */
+  width: 100%; /* Fit the width of the container */
+  height: 100%; /* Fit the height of the container */
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Remove extra spacing caused by inline-block images */
 }
 
 
