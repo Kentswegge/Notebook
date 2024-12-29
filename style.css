@@ -147,7 +147,7 @@ img {
     align-items: center;
     justify-content: center;
     margin: auto; /* Center the container */
-    overflow: hidden; /* Prevent content overflow */
+    overflow: visible; /* Prevent content overflow */
 }
 
   #random-image {
