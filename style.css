@@ -125,3 +125,49 @@ img {
   margin: 0 auto;
   transition: all 0.3s ease;      /* Optional: smooth transition when changing sizes */
 }
+
+
+/* Smaller than desktop screens will be affected by this */
+
+/* Example code for media queries */
+@media (max-width: 768px) {
+  /* Adjust the white bounding box for smaller screens */
+  #image-container {
+    width: 90%; /* Scale the box width to 90% of the viewport width */
+    height: auto; /* Allow height to adjust automatically based on aspect ratio */
+    aspect-ratio: 565 / 800; /* Maintain original aspect ratio */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  /* Resize the image inside the bounding box */
+  #random-image {
+    width: 100%; /* Image fills the width of the box */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image doesn't stretch */
+  }
+
+  /* Adjust short description position */
+  #short-description {
+    position: static; /* Let it flow naturally below the box */
+    width: 90%; /* Adjust width to fit smaller screens */
+    margin: 10px auto; /* Center and add spacing */
+    text-align: center; /* Center-align text */
+  }
+
+  /* Adjust long description position */
+  #image-description {
+    position: static; /* Let it flow naturally below the box */
+    width: 90%; /* Adjust width to fit smaller screens */
+    margin: 10px auto; /* Center and add spacing */
+    text-align: center; /* Center-align text */
+  }
+
+  /* Adjust button position */
+  #next-button {
+    position: relative; /* Move it relative to the flow */
+    margin: 20px auto; /* Center horizontally */
+    display: block; /* Ensure it displays as a block */
+  }
+}
+
