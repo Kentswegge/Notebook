@@ -131,21 +131,23 @@ img {
 
 /* Example code for media queries */
 @media (max-width: 768px) {
-  /* Adjust the white bounding box for smaller screens */
   #image-container {
-    width: 90%; /* Scale the box width to 90% of the viewport width */
-    height: auto; /* Allow height to adjust automatically based on aspect ratio */
-    aspect-ratio: 565 / 800; /* Maintain original aspect ratio */
+    width: 90%; /* Scale the width to fit within the screen */
+    height: auto; /* Let the height adjust based on aspect ratio */
+    aspect-ratio: 565 / 800; /* Maintain the original aspect ratio */
     margin: 0 auto; /* Center the box horizontally */
     padding: 10px; /* Adjust padding for smaller screens */
+    display: flex; /* Ensure alignment */
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Resize the image inside the bounding box */
   #random-image {
-    width: 100%; /* Image fills the width of the box */
+    width: 100%; /* Scale image to fit inside the container */
     height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the image doesn't stretch */
+    object-fit: contain; /* Ensure the image does not stretch */
   }
+
 
   /* Adjust short description position */
   #short-description {
