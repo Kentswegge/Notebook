@@ -129,33 +129,36 @@ img {
 
 /* Smaller than desktop screens will be affected by this */
 
-/* Example code for media queries */
 @media (max-width: 768px) {
   #image-container {
-    width: 90vw; /* Scale width with screen */
+    width: 90vw; /* Scale the container width */
     aspect-ratio: 565 / 800; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; /* Center the container */
     display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Align content to the top */
     border: 1px solid white;
     padding: 10px;
     box-sizing: border-box;
   }
 
   #random-image {
-    width: 100%; /* Image adjusts with container */
+    width: 100%; /* Scale image with container */
     height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Avoid stretching */
+    object-fit: contain; /* Avoid distortion */
+    margin-bottom: 20px; /* Add space below the image */
   }
 
-
-  /* Adjust short description position */
-  #short-description {
-    position: static; /* Let it flow naturally below the box */
-    width: 90%; /* Adjust width to fit smaller screens */
-    margin: 10px auto; /* Center and add spacing */
-    text-align: center; /* Center-align text */
+  /* Short description */
+  #short-description, #image-description {
+    position: static; /* Remove absolute positioning */
+    width: 100%; /* Match container width */
+    max-width: 90%; /* Keep some padding from edges */
+    margin: 10px auto; /* Center text with some spacing */
+    text-align: center; /* Align text */
+    line-height: 1.5; /* Ensure readability */
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
 
   /* Adjust long description position */
