@@ -26,14 +26,15 @@ body {
 #image-container {
   position: relative;
   display: inline-block;
-  width: 28vw; /* Adjust this value to control the size based on viewport width */
-  max-width: 90%; /* Ensure it doesn't exceed screen size */
-  aspect-ratio: 565 / 800; /* Lock aspect ratio */
+  width: 28vw; /* Width as a percentage of the viewport */
+  max-width: 90%; /* Prevent it from being too large on small screens */
+  aspect-ratio: 565 / 800; /* Maintain aspect ratio of the container */
   border: 1px solid white;
   padding: 10px;
   box-sizing: border-box;
   background-color: transparent;
 }
+
 
   /* Centering the container */
   margin: auto;
