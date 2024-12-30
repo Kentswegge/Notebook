@@ -40,7 +40,7 @@ body {
   position: absolute;
   top: -50px; /* Adjust to position above the white border */
   left: 0; /* Align with the left side of the container */
-  font-size: 24px;
+  font-size: 14px;
   font-weight: bold;
   color: white;
   z-index: 2;
