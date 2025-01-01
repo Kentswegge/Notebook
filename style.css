@@ -72,8 +72,8 @@ body {
 /* Short description (bold title) */
 #short-description {
   position: absolute;
-  top: 0;
-  right: -330px;
+  top: 50px; /* Adjust based on desired alignment */
+  right: 10px; /* Bring it within visible bounds */
   width: 300px;
   font-weight: bold;
   text-align: left;
@@ -141,13 +141,16 @@ body {
   }
 
   #short-description,
-  #image-description {
-    position: static;
-    width: 90%;
-    margin: 10px auto;
-    text-align: center;
+#image-description {
+    position: absolute;
+    top: 150px; /* Below the short description */
+    right: 10px; /* Same as short description */
+    width: 300px;
+    text-align: left;
+    color: white;
     line-height: 1.5;
-  }
+    word-wrap: break-word;
+}
 
   #next-button {
     position: static;
