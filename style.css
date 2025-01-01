@@ -143,8 +143,8 @@ body {
   #short-description,
 #image-description {
     position: absolute;
-    top: 150px; /* Below the short description */
-    right: 10px; /* Same as short description */
+    top: 530px; /* Below the short description */
+    right: 50px; /* Same as short description */
     width: 300px;
     text-align: left;
     color: white;
@@ -153,7 +153,7 @@ body {
 }
 
   #next-button {
-    position: static;
+    position: absolute;
     margin: 20px auto;
   }
 }
