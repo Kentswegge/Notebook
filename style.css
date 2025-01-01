@@ -23,7 +23,7 @@ body {
   z-index: -1;
 }
 
-/* Title styling */
+/* Title styling
 #title {
   position: absolute;
   top: 5%; /* Adjust to the desired vertical position above the white border */
@@ -35,6 +35,7 @@ body {
   z-index: 2;
   margin: 0;
 }
+*/
 
 /* Header styling */
 .header-title {
