@@ -23,19 +23,6 @@ body {
   z-index: -1;
 }
 
-/* Title styling
-#title {
-  position: absolute;
-  top: 5%; /* Adjust to the desired vertical position above the white border */
-  left: 50%; /* Center-align based on the container */
-  transform: translateX(-50%); /* Precisely center it horizontally */
-  font-size: 94px;
-  font-weight: bold;
-  color: white;
-  z-index: 2;
-  margin: 0;
-}
-*/
 
 /* Header styling */
 .header-title {
