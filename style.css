@@ -86,7 +86,7 @@ body {
 #image-description {
   position: absolute;
   top: 100px;
-  right: -330px;
+  right: 330px;
   width: 300px;
   text-align: left;
   color: white;
