@@ -122,11 +122,13 @@ body {
   }
   
 /* HEADER */
-    #title {
-    top: 10px; /* Place it near the top */
+  #title {
+    position: absolute; /* Ensure it stays at a fixed position */
+    top: 20px; /* Slightly lower to ensure visibility */
     left: 50%; /* Center-align */
-    transform: translateX(-50%); /* Center horizontally */
-    font-size: 18px; /* Slightly smaller for mobile */
+    transform: translateX(-50%);
+    font-size: 18px; /* Adjust font size for mobile */
+    z-index: 3; /* Ensure it is above other elements */
   }
 
   #image-container {
