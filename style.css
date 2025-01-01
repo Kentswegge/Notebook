@@ -38,7 +38,7 @@ body {
 
 .header-title {
   position: absolute;
-  top: -20px; /* Adjust to position above the white border */
+  top: -35px; /* Adjust to position above the white border */
   left: 0; /* Align with the left side of the container */
   font-size: 14px;
   font-weight: bold;
