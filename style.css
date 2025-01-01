@@ -23,7 +23,7 @@ body {
   z-index: -1;
 }
 
-/* Title styling */
+/* Header title styling */
 #title {
   position: absolute;
   top: 5%; /* Adjust to the desired vertical position above the white border */
@@ -149,7 +149,7 @@ body {
     right: auto; /* Align within parent container */
     margin: 10px auto; /* Add spacing */
     width: 90%; /* Ensure it fits mobile screens */
-    text-align: center; /* Center text for mobile readability */
+    text-align: left; /* lef align text for mobile readability */
   }
 
   /* LONG DESCRIPTION */
@@ -159,7 +159,7 @@ body {
     right: auto;
     margin: 10px auto; /* Space below short description */
     width: 90%; /* Same width as short description */
-    text-align: center; /* Center text for consistency */
+    text-align: left; /* Left align text for consistency */
   }
   
   #next-button {
