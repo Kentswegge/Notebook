@@ -73,7 +73,7 @@ body {
 #short-description {
   position: absolute;
   top: 55px; /* Adjust based on desired alignment */
-  right: 10px; /* Bring it within visible bounds */
+  right: 340px; /* Bring it within visible bounds */
   width: 300px;
   font-weight: bold;
   text-align: left;
