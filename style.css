@@ -119,11 +119,13 @@ body {
     flex-direction: column;
     height: auto;
   }
-
-  #title {
-    top: 5%; /* Adjust title position for mobile */
-    left: 5%; /* Align title left for mobile */
-    font-size: 20px;
+  
+/* HEADER */
+    #title {
+    top: 10px; /* Place it near the top */
+    left: 50%; /* Center-align */
+    transform: translateX(-50%); /* Center horizontally */
+    font-size: 18px; /* Slightly smaller for mobile */
   }
 
   #image-container {
@@ -140,18 +142,26 @@ body {
     height: auto;
   }
 
-  #short-description,
-#image-description {
-    position: absolute;
-    top: 530px; /* Below the short description */
-    right: 50px; /* Same as short description */
-    width: 300px;
-    text-align: left;
-    color: white;
-    line-height: 1.5;
-    word-wrap: break-word;
-}
+ /* Short description */
+  #short-description {
+    position: relative; /* Allow them to stack naturally */
+    top: auto; /* Remove fixed top positioning */
+    right: auto; /* Align within parent container */
+    margin: 10px auto; /* Add spacing */
+    width: 90%; /* Ensure it fits mobile screens */
+    text-align: center; /* Center text for mobile readability */
+  }
 
+  /* LONG DESCRIPTION */
+    #image-description {
+    position: relative;
+    top: auto; /* Remove fixed top positioning */
+    right: auto;
+    margin: 10px auto; /* Space below short description */
+    width: 90%; /* Same width as short description */
+    text-align: center; /* Center text for consistency */
+  }
+  
   #next-button {
     position: absolute;
     margin: 20px auto;
