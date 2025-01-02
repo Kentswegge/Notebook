@@ -115,22 +115,25 @@ body {
 }
 
 /* Mobile adjustments */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
     height: auto;
-  }
-  
-/* HEADER */
-  #title {
-    position: absolute; /* Ensure it stays at a fixed position */
-    top: 20px; /* Slightly lower to ensure visibility */
-    left: 50%; /* Center-align */
-    transform: translateX(-50%);
-    font-size: 18px; /* Adjust font size for mobile */
-    z-index: 3; /* Ensure it is above other elements */
+    overflow: hidden; /* Prevent elements from overflowing */
   }
 
+  /* HEADER TITLE */
+  #title {
+    position: fixed; /* Ensures it stays visible */
+    top: 10px; /* Keep it near the top */
+    left: 50%; /* Center-align */
+    transform: translateX(-50%);
+    font-size: 18px;
+    z-index: 3; /* Ensure it appears above other elements */
+  }
+
+  /* IMAGE CONTAINER */
   #image-container {
     width: 90%;
     max-width: 565px;
@@ -138,35 +141,38 @@ body {
     aspect-ratio: 565 / 800;
     margin: 20px auto;
     padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent content from poking out */
   }
 
+  /* IMAGE INSIDE THE CONTAINER */
   #random-image {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    object-fit: contain;
   }
 
- /* Short description */
+  /* SHORT DESCRIPTION */
   #short-description {
-    position: relative; /* Allow them to stack naturally */
-    top: auto; /* Remove fixed top positioning */
-    right: auto; /* Align within parent container */
+    position: relative; /* Allow stacking */
     margin: 10px auto; /* Add spacing */
-    width: 90%; /* Ensure it fits mobile screens */
-    text-align: left; /* lef align text for mobile readability */
+    width: 90%; /* Fit within screen */
+    text-align: left;
+    color: white;
   }
 
   /* LONG DESCRIPTION */
-    #image-description {
+  #image-description {
     position: relative;
-    top: auto; /* Remove fixed top positioning */
-    right: auto;
     margin: 10px auto; /* Space below short description */
-    width: 90%; /* Same width as short description */
-    text-align: left; /* Left align text for consistency */
+    width: 90%;
+    text-align: left;
+    color: white;
   }
-  
+
+  /* NEXT BUTTON */
   #next-button {
-    position: absolute;
+    position: relative;
     margin: 20px auto;
   }
 }
