@@ -156,7 +156,7 @@ body {
 
   /* SHORT DESCRIPTION */
   #short-description {
-    position: relative; /* Allow stacking */
+    position: static; /* Allow stacking */
     margin: 10px auto; /* Add spacing */
     width: 90%; /* Fit within screen */
     text-align: left;
@@ -165,7 +165,7 @@ body {
 
   /* LONG DESCRIPTION */
   #image-description {
-    position: relative;
+    position: static;
     margin: 10px auto; /* Space below short description */
     width: 90%;
     text-align: left;
@@ -174,7 +174,7 @@ body {
 
   /* NEXT BUTTON */
   #next-button {
-    position: relative;
+    position: absolute;
     margin: 20px auto;
   }
 }
