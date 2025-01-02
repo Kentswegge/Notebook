@@ -119,7 +119,7 @@ body {
   body {
     flex-direction: column;
     height: auto;
-    overflow: hidden; /* Prevent elements from overflowing */
+    overflow: visible; /* Prevent elements from overflowing */
   }
 
   /* HEADER TITLE */
