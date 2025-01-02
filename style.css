@@ -37,16 +37,20 @@ body {
 }
 
 /* Header styling */
-.header-title {
-  position: absolute;
-  top: -35px; /* Adjust to position above the white border */
-  left: 0; /* Align with the left side of the container */
-  font-size: 14px;
+#header-title {
+  position: fixed; /* Fix it to the viewport */
+  top: 10px; /* Adjust to desired vertical position */
+  left: 50%; /* Center-align horizontally */
+  transform: translateX(-50%); /* Precisely center */
+  font-size: 24px; /* Adjust size */
   font-weight: bold;
   color: white;
-  z-index: 2;
-  text-align: left;
+  z-index: 100; /* Ensure visibility above other elements */
+  text-align: center;
 }
+
+
+
 
 /* Main container with white border */
 #image-container {
