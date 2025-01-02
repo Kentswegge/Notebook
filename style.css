@@ -40,7 +40,7 @@ body {
 #header-title {
   position: fixed; /* Fix it to the viewport */
   top: 10px; /* Adjust to desired vertical position */
-  left: 50%; /* Center-align horizontally */
+  left: 38.8%; /* Center-align horizontally */
   transform: translateX(-50%); /* Precisely center */
   font-size: 24px; /* Adjust size */
   font-weight: bold;
