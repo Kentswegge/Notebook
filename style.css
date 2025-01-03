@@ -127,16 +127,18 @@ body {
   }
 
   /* HEADER TITLE */
-#title {
-    position: fixed; /* Position relative to the viewport */
-    top: 10px; /* Place it at the top of the screen */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%); /* Correct centering */
-    font-size: 18px; /* Adjust for mobile readability */
-    z-index: 100; /* Ensure it's above all other elements */
-    color: white; /* Ensure visibility */
-    background: none; /* No background */
+#header-title {
+  position: fixed; /* Fix it to the viewport */
+  top: 10px; /* Adjust to desired vertical position */
+  left: 50%; /* Center-align horizontally */
+  transform: translateX(-50%); /* Precisely center */
+  font-size: 24px; /* Adjust size */
+  font-weight: bold;
+  color: white;
+  z-index: 100; /* Ensure visibility above other elements */
+  text-align: center;
 }
+
 
 
   /* IMAGE CONTAINER */
