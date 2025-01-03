@@ -149,6 +149,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden; /* Prevent content from poking out */
+    margin-top: 80px;
   }
 
   /* IMAGE INSIDE THE CONTAINER */
