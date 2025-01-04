@@ -181,15 +181,17 @@ body {
   }
 
   /* NEXT BUTTON */
-   #next-button {
-    position: relative; /* Ensure it aligns naturally with the content */
-    margin: 20px auto; /* Add spacing and center horizontally */
-    padding: 10px 20px;
-    background-color: #000;
-    border: 1px solid white;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    display: inline-block; /* Center-aligns properly within a centered container */
+  #next-button {
+    position: relative; /* Allows positioning within the flow of the page */
+    margin: 20px auto; /* Centers horizontally if width is defined */
+    left: 50%; /* Shift to the middle of the screen */
+    transform: translateX(-50%); /* Correct centering offset */
+    padding: 10px 20px; /* Button padding */
+    background-color: #000; /* Button background */
+    border: 1px solid white; /* Button border */
+    color: white; /* Button text color */
+    font-size: 14px; /* Text size */
+    cursor: pointer; /* Pointer on hover */
+    display: inline-block; /* Ensures proper alignment */
   }
 }
