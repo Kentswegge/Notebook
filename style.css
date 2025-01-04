@@ -124,6 +124,7 @@ body {
     flex-direction: column;
     height: auto;
     overflow: visible; /* Prevent elements from overflowing */
+    text-align: center;
   }
 
   /* HEADER TITLE */
@@ -180,17 +181,15 @@ body {
   }
 
   /* NEXT BUTTON */
-  #next-button {
-    position: relative; /* Position relative to its natural flow in the document */
-    margin: 20px auto; /* Center-align and add spacing from the content */
+   #next-button {
+    position: relative; /* Ensure it aligns naturally with the content */
+    margin: 20px auto; /* Add spacing and center horizontally */
     padding: 10px 20px;
     background-color: #000;
     border: 1px solid white;
     color: white;
     font-size: 14px;
     cursor: pointer;
-    display: block; /* Ensure it behaves like a block element */
-    text-align: center; /* Center-align text inside the button */
-    left: 50%;
+    display: inline-block; /* Center-aligns properly within a centered container */
   }
 }
