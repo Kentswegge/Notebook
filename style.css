@@ -191,5 +191,6 @@ body {
     cursor: pointer;
     display: block; /* Ensure it behaves like a block element */
     text-align: center; /* Center-align text inside the button */
+    left: 50%;
   }
 }
