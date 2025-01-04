@@ -153,6 +153,7 @@ body {
     box-sizing: border-box;
     overflow: hidden; /* Prevent content from poking out */
     margin-top: 50px;
+    border: 1px solid blue;
   }
 
   /* IMAGE INSIDE THE CONTAINER */
@@ -169,6 +170,7 @@ body {
     width: 90%; /* Fit within screen */
     text-align: left;
     color: white;
+    border: 1px solid red;
   }
 
   /* LONG DESCRIPTION */
@@ -178,6 +180,7 @@ body {
     width: 90%;
     text-align: left;
     color: white;
+    border: 1px solid green;
   }
 
   /* NEXT BUTTON */
