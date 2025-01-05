@@ -184,14 +184,18 @@ body {
 
 
   /* LONG DESCRIPTION */
-  #image-description {
-    position: static;
-    margin: 10px auto; /* Space below short description */
-    width: 90%;
-    text-align: left;
-    color: white;
-    border: 1px solid green;
-  }
+#short-description, #image-description {
+  position: absolute; /* Keep descriptions positioned within the container */
+  left: 20px; /* Align with the padding of #image-container (adjust if needed) */
+  top: 120px;
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  width: calc(100% - 40px); /* Account for container's padding (20px on each side) */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  text-align: left; /* Align text content to the left */
+  line-height: 1.5; /* Ensure consistent line spacing */
+  word-wrap: break-word; /* Prevent text overflow */
+}
 
   /* NEXT BUTTON */
   #next-button {
