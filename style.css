@@ -165,13 +165,20 @@ body {
 
   /* SHORT DESCRIPTION */
 #short-description, #image-description {
-  text-align: left; /* Ensure text aligns left */
-  margin: 0; /* Remove any unintended margins */
-  padding: 0; /* Remove any unintended padding */
-  text-indent: 0; /* Prevent text indentation */
-  width: 100%; /* Ensure full-width alignment */
-  box-sizing: border-box; /* Include padding in width */
+  position: relative; /* Ensure it stacks properly */
+  display: block; /* Ensure it behaves as a block-level element */
+  text-align: left; /* Left-align text */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
+  text-indent: 0; /* Prevent indentations */
+  width: calc(100% - 40px); /* Adjust to fit within the container with a small margin */
+  box-sizing: border-box; /* Include padding in width calculation */
+  line-height: 1.5; /* Ensure consistent line spacing */
+  color: white; /* Ensure visibility */
+  z-index: 1; /* Ensure it stays visible */
+  word-wrap: break-word; /* Prevent overflow from long words */
 }
+
 
 
   /* LONG DESCRIPTION */
