@@ -167,7 +167,7 @@ body {
 #short-description, #image-description {
   position: absolute; /* Align with parent container */
   left: 20px; /* Align with the left edge of the parent */
-  top: auto; /* Keep its vertical position untouched */
+  top: calc(100% + 10px); /* Keep its vertical position untouched */
   display: block; /* Ensure block-level behavior */
   text-align: left; /* Align text to the left */
   margin: 0; /* Remove margins */
@@ -187,6 +187,7 @@ body {
 #image-description {
   position: absolute; /* Keep descriptions positioned within the container */
   left: 20px; /* Align with the padding of #image-container (adjust if needed) */
+  top: calc(100% + 60px);
   width: calc(100% - 40px); /* Account for container's padding (20px on each side) */
   box-sizing: border-box; /* Ensure padding is included in the width */
   text-align: left; /* Align text content to the left */
