@@ -166,7 +166,7 @@ body {
   /* SHORT DESCRIPTION */
 #short-description, #image-description {
   position: absolute; /* Align with parent container */
-  left: 0; /* Align with the left edge of the parent */
+  left: 20px; /* Align with the left edge of the parent */
   top: auto; /* Keep its vertical position untouched */
   display: block; /* Ensure block-level behavior */
   text-align: left; /* Align text to the left */
