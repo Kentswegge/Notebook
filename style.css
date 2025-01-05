@@ -164,14 +164,15 @@ body {
   }
 
   /* SHORT DESCRIPTION */
-  #short-description {
-    position: static; /* Allow stacking */
-    margin: 10px auto; /* Add spacing */
-    width: 90%; /* Fit within screen */
-    text-align: left;
-    color: white;
-    border: 1px solid red;
-  }
+#short-description, #image-description {
+  text-align: left; /* Ensure text aligns left */
+  margin: 0; /* Remove any unintended margins */
+  padding: 0; /* Remove any unintended padding */
+  text-indent: 0; /* Prevent text indentation */
+  width: 100%; /* Ensure full-width alignment */
+  box-sizing: border-box; /* Include padding in width */
+}
+
 
   /* LONG DESCRIPTION */
   #image-description {
