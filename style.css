@@ -165,18 +165,20 @@ body {
 
   /* SHORT DESCRIPTION */
 #short-description, #image-description {
-  position: relative; /* Ensure it stacks properly */
-  display: block; /* Ensure it behaves as a block-level element */
-  text-align: left; /* Left-align text */
-  margin: 0; /* Reset margins */
-  padding: 0; /* Reset padding */
-  text-indent: 0; /* Prevent indentations */
-  width: calc(100% - 40px); /* Adjust to fit within the container with a small margin */
-  box-sizing: border-box; /* Include padding in width calculation */
+  position: absolute; /* Align with parent container */
+  left: 0; /* Align with the left edge of the parent */
+  top: auto; /* Keep its vertical position untouched */
+  display: block; /* Ensure block-level behavior */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove padding */
+  width: 90%; /* Adjust for a slight margin within the parent */
+  box-sizing: border-box; /* Include padding in width */
   line-height: 1.5; /* Ensure consistent line spacing */
-  color: white; /* Ensure visibility */
-  z-index: 1; /* Ensure it stays visible */
   word-wrap: break-word; /* Prevent overflow from long words */
+  overflow: visible; /* Ensure visibility */
+  color: white; /* Keep text visible */
+  z-index: 1; /* Place above other elements */
 }
 
 
