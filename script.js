@@ -101,15 +101,11 @@ let shownImages = [];
 function getRandomImage() {
   // Check if all images have been shown
   if (shownImages.length === imageData.length) {
-    console.log("All images shown. Resetting the list...");
     shownImages = []; // Reset the shown images array
   }
 
   // Filter unseen images
   const unseenImages = imageData.filter(img => !shownImages.includes(img));
-
-  // Log unseen images for debugging
-  console.log("Unseen Images:", unseenImages);
 
   // Select a random image from unseen images
   const randomIndex = Math.floor(Math.random() * unseenImages.length);
@@ -117,12 +113,6 @@ function getRandomImage() {
 
   // Mark this image as shown
   shownImages.push(selectedImage);
-
-  // Log the updated list of shown images for debugging
-  console.log("Shown Images:", shownImages);
-
-  // Update debugging information on the page
-  updateDebuggingInfo(shownImages, unseenImages);
 
   return selectedImage;
 }
@@ -147,20 +137,6 @@ function showImage(imageData) {
 
   // Adjust the image's orientation
   adjustImageOrientation(imageElement);
-}
-
-// Function to update debugging information on the webpage
-function updateDebuggingInfo(shownImages, unseenImages) {
-  const shownImagesContainer = document.getElementById("shown-images");
-  const unseenImagesContainer = document.getElementById("unseen-images");
-
-  // Display shown images
-  shownImagesContainer.innerHTML = `<strong>Shown Images (${shownImages.length}):</strong> 
-    ${shownImages.map(img => img.shortDescription || "Unnamed").join(", ")}`;
-
-  // Display unseen images
-  unseenImagesContainer.innerHTML = `<strong>Unseen Images (${unseenImages.length}):</strong> 
-    ${unseenImages.map(img => img.shortDescription || "Unnamed").join(", ")}`;
 }
 
 // Function to adjust the image's orientation based on its aspect ratio
