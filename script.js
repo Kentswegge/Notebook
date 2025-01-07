@@ -94,42 +94,42 @@ initParticles();
 
 
 
-
-
-
 // Array to keep track of shown images
 let shownImages = [];
 
-// Function to shuffle an array (optional, if you want randomness)
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+// Function to get a random image that hasn't been shown
+function getRandomImage() {
+  // Check if all images have been shown
+  if (shownImages.length === imageData.length) {
+    shownImages = []; // Reset the shown images array
   }
+
+  // Filter unseen images
+  const unseenImages = imageData.filter(img => !shownImages.includes(img));
+
+  // Select a random image from unseen images
+  const randomIndex = Math.floor(Math.random() * unseenImages.length);
+  const selectedImage = unseenImages[randomIndex];
+
+  // Mark this image as shown
+  shownImages.push(selectedImage);
+
+  return selectedImage;
 }
 
-// Function to show the next image
-function showNextImage() {
-  // If all images have been shown, reset and shuffle for a fresh cycle
-  if (shownImages.length === imageData.length) {
-    shownImages = [];
-    shuffleArray(imageData); // Shuffle only if desired
-  }
-
-  // Find the next image that hasn't been shown
-  const nextImage = imageData.find(img => !shownImages.includes(img));
-
+// Function to show an image
+function showImage(imageData) {
   // Update the displayed image and descriptions
   const imageElement = document.getElementById("random-image");
   const shortDescElement = document.getElementById("short-description");
   const longDescElement = document.getElementById("image-description");
 
-  imageElement.src = nextImage.url;
-  imageElement.alt = nextImage.shortDescription || "Image description";
+  imageElement.src = imageData.url;
+  imageElement.alt = imageData.shortDescription || "Image description";
 
-  shortDescElement.innerHTML = `<strong>${nextImage.shortDescription || "No description available."}</strong>`;
-  if (nextImage.longDescription) {
-    longDescElement.textContent = nextImage.longDescription;
+  shortDescElement.innerHTML = `<strong>${imageData.shortDescription || "No description available."}</strong>`;
+  if (imageData.longDescription) {
+    longDescElement.textContent = imageData.longDescription;
     longDescElement.style.display = "block"; // Show long description
   } else {
     longDescElement.style.display = "none"; // Hide if no long description
@@ -137,9 +137,6 @@ function showNextImage() {
 
   // Adjust the image's orientation
   adjustImageOrientation(imageElement);
-
-  // Mark this image as shown
-  shownImages.push(nextImage);
 }
 
 // Function to adjust the image's orientation based on its aspect ratio
@@ -160,7 +157,13 @@ function adjustImageOrientation(image) {
 }
 
 // Event listener for the "Next Image" button
-document.getElementById("next-button").addEventListener("click", showNextImage);
+document.getElementById("next-button").addEventListener("click", () => {
+  const nextImage = getRandomImage();
+  showImage(nextImage);
+});
 
-// Initialize the first image when the page loads
-window.onload = showNextImage;
+// Initialize a random image when the page loads
+window.onload = () => {
+  const initialImage = getRandomImage();
+  showImage(initialImage);
+};
