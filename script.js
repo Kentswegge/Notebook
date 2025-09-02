@@ -93,6 +93,7 @@ function initParticles() {
 initParticles();
 
 // debugging - this code checks to see how many images are loaded into the site. (To use it: Open the site, press F12 → Console, and you should see: "Number of images loaded: 1089")
+console.log("script.js loaded successfully");
 console.log("Number of images loaded:", imageData.length);
 
 
